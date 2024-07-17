@@ -14,7 +14,7 @@ const BadgeColors = {
   danger: "#FF0000",
   warning: "#FFA500",
   info: "#EBE5F9",
-  default: "#000000",
+  default: "#F1E9C9",
 };
 
 const BadgeTextColors = {
@@ -22,7 +22,7 @@ const BadgeTextColors = {
   danger: "#FF0000",
   warning: "#FFA500",
   info: "#8047F8",
-  default: "#000000",
+  default: "#C47F17",
 };
 
 export function Badge({ icon = "", label = "", type, onClick }: BadgeProps) {
