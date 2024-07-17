@@ -1,8 +1,10 @@
+import HeaderPage from "./features/Header/pages/HeaderPage";
+
 function App() {
 
   return (
     <>
-      <p>main page</p>
+      <HeaderPage />
     </>
   )
 }
