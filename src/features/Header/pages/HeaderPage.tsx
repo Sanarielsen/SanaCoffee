@@ -1,3 +1,4 @@
+import { HeaderAddress } from "../components/HeaderAddress";
 import { HeaderBrand } from "../components/HeaderBrand";
 import { HeaderContainer } from "../styles/HeaderContainer";
 
@@ -9,7 +10,7 @@ export default function HeaderPage() {
           <HeaderBrand />
         </div>
         <div>
-          Endereço e Carrinho
+          <HeaderAddress />
         </div>
       </HeaderContainer>
     </>
