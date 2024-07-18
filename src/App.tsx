@@ -1,10 +1,18 @@
-import HeaderPage from "./features/Header/pages/HeaderPage";
+import { BrowserRouter } from "react-router-dom";
+import { defaultTheme } from './styles/themes/default'
+import { GlobalStyle } from "./styles/GlobalStyle";
+import { Router } from "./Router";
+import { ThemeProvider } from "styled-components";
 
 function App() {
-
   return (
     <>
-      <HeaderPage />
+      <ThemeProvider theme={defaultTheme}>
+      <BrowserRouter>
+        <Router />        
+      </BrowserRouter>
+      <GlobalStyle />
+    </ThemeProvider>
     </>
   )
 }
