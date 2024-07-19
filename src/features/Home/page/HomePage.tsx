@@ -1,7 +1,17 @@
+import { HomeBannerTitle } from "../components/HomeBannerTitle";
+import { HomeBannerImage } from "../components/HomeBannerImage";
+import { HomeContainer } from "../styles/HomeContainer";
+import { HomeContext } from "../styles/HomeContext";
+
 export function HomePage() {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <HomeContainer>
+      <HomeContext>
+        <HomeBannerTitle />
+      </HomeContext>
+      <HomeContext>
+        <HomeBannerImage />
+      </HomeContext>
+    </HomeContainer>
   )
 }
