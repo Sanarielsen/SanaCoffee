@@ -1,17 +1,18 @@
 import { HomeBannerTitle } from "../components/HomeBannerTitle";
 import { HomeBannerImage } from "../components/HomeBannerImage";
 import { HomeContainer } from "../styles/HomeContainer";
-import { HomeContext } from "../styles/HomeContext";
+import { HomeContextFirst } from "../styles/HomeContextFirst";
+import { HomeContextSecond } from "../styles/HomeContextSecond";
 
 export function HomePage() {
   return (
     <HomeContainer>
-      <HomeContext>
+      <HomeContextFirst>
         <HomeBannerTitle />
-      </HomeContext>
-      <HomeContext>
+      </HomeContextFirst>
+      <HomeContextSecond>
         <HomeBannerImage />
-      </HomeContext>
+      </HomeContextSecond>
     </HomeContainer>
   )
 }
