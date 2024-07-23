@@ -1,6 +1,8 @@
 import { HomeBannerSubtitles } from "../styles/HomeBannerSubtitles";
 import { TitleBanner } from "../styles/TitleBanner";
 import { HomeBannerTitles } from "../styles/HomeBannerTitles";
+import { BadgeDescription } from "../../../components/BadgeDescription";
+import { ColorVariant } from "../../../types/ColorType";
 
 export function HomeBannerTitle() {
   return (
@@ -18,12 +20,28 @@ export function HomeBannerTitle() {
       </div>
       <div>
         <HomeBannerSubtitles>
-          <span>Compra simples e segura</span>
-          <span>Entrega rápida e rastreada</span>
+          <BadgeDescription
+            icon="/BannerCart.svg"
+            color={ColorVariant.ORANGE}
+            label="Compra simples e segura"
+          />
+          <BadgeDescription
+            icon="/BannerBox.svg"
+            color={ColorVariant.BLACK}
+            label="Embalagem mantém o café intacto"
+          />
         </HomeBannerSubtitles>
         <HomeBannerSubtitles>
-          <span>Embalagem mantém o café intacto</span>
-          <span>O café chega fresquinho até você</span>
+          <BadgeDescription
+            icon="/BannerClock.svg"
+            color={ColorVariant.YELLOW}
+            label="Entrega rápida e rastreada"
+          />
+          <BadgeDescription
+            icon="/BannerCoffee.svg"
+            color={ColorVariant.PURPLE}
+            label="O café chega fresquinho até você"
+          />
         </HomeBannerSubtitles>
       </div>
     </div>
