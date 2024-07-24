@@ -1,5 +1,5 @@
-import { Badge } from "../../../components/Badge";
-import { ColorType } from "../../../types/ColorType";
+import { Badge } from "@globalComponents/Badge";
+import { ColorType } from "@globalTypes/ColorType";
 
 export function HeaderCart() {
   return (
