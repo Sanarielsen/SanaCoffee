@@ -1,8 +1,7 @@
-
-import { BadgeCircleBody } from "../styles/BadgeCircleBody";
-import { BadgeContext } from "../styles/BadgeContext";
-import { BadgeContainerCircle } from "../styles/BadgeIconCircle";
-import { ColorVariant } from "../types/ColorType";
+import { BadgeCircleBody } from "@globalStyles/BadgeCircleBody";
+import { BadgeContainerCircle } from "@globalStyles/BadgeIconCircle";
+import { BadgeContext } from "@globalStyles/BadgeContext";
+import { ColorVariant } from "@globalTypes/ColorVariant";
 
 interface BadgeDescriptionProps {
   icon: string;
@@ -14,21 +13,21 @@ const BadgeColors = {
   black: "#574F4D",
   orange: "#C47F17",
   purple: "#8047F8",
-  yellow: "#DBAC2C"
+  yellow: "#DBAC2C",
 };
 
 export function BadgeDescription({
   icon,
   color,
-  label
+  label,
 }: BadgeDescriptionProps) {
   return (
     <>
-      <BadgeCircleBody> 
+      <BadgeCircleBody>
         <BadgeContainerCircle
           onClick={() => {}}
           style={{
-            backgroundColor: BadgeColors[color]
+            backgroundColor: BadgeColors[color],
           }}
         >
           <BadgeContext>

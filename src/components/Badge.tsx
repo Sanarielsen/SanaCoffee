@@ -1,6 +1,6 @@
-import { BadgeContainer } from "../styles/BadgeContainer";
-import { BadgeContext } from "../styles/BadgeContext";
-import { ColorType } from "../types/ColorType";
+import { BadgeContainer } from "@globalStyles/BadgeContainer";
+import { BadgeContext } from "@globalStyles/BadgeContext";
+import { ColorType } from "@globalTypes/ColorType";
 
 interface BadgeProps {
   icon?: string;

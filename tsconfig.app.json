@@ -21,7 +21,17 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    
+    /* Imports Path */
+    "baseUrl": ".",
+    "paths": {
+      "@features/*": ["./src/features/*"],
+      "@globalComponents/*": ["./src/components/*"],
+      "@globalLayouts/*": ["./src/layouts/*"],
+      "@globalStyles/*": ["./src/styles/*"],
+      "@globalTypes/*": ["./src/types/*"],
+    },
   },
   "include": ["src"]
 }
