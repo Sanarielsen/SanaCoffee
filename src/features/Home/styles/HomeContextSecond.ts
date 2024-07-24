@@ -12,7 +12,7 @@ export const HomeContextSecond = styled.div`
   }
 
   @media ${device.laptopL} {
-    width: 45%;
+    width: 50%;
     height: 100%;
   }
 `

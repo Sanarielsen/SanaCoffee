@@ -4,7 +4,7 @@ export const BadgeContainerCircle = styled.div`
 
   display: flex;
   border-radius: 50%;
-  margin: 8px;
+  margin-right: 16px;
   padding: 8px;
   cursor: pointer;
 `;

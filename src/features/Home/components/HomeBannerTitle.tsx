@@ -3,6 +3,8 @@ import { TitleBanner } from "../styles/TitleBanner";
 import { HomeBannerTitles } from "../styles/HomeBannerTitles";
 import { BadgeDescription } from "../../../components/BadgeDescription";
 import { ColorVariant } from "../../../types/ColorType";
+import { HomeBannerBlock } from "../styles/HomeBannerBlock";
+import { DescriptionBanner } from "../styles/DescriptionBanner";
 
 export function HomeBannerTitle() {
   return (
@@ -10,38 +12,46 @@ export function HomeBannerTitle() {
       <div>
         <HomeBannerTitles>
           <TitleBanner>
-            Encontre o café perfeito <br /> para qualquer hora do dia
+            Encontre o café perfeito para qualquer hora do dia
           </TitleBanner>
-          <span style={{ fontSize: "20px" }}>
+          <DescriptionBanner>
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
-          </span>
+          </DescriptionBanner>
         </HomeBannerTitles>
       </div>
       <div>
         <HomeBannerSubtitles>
-          <BadgeDescription
-            icon="/BannerCart.svg"
-            color={ColorVariant.ORANGE}
-            label="Compra simples e segura"
-          />
-          <BadgeDescription
-            icon="/BannerBox.svg"
-            color={ColorVariant.BLACK}
-            label="Embalagem mantém o café intacto"
-          />
+          <HomeBannerBlock>
+            <BadgeDescription
+              icon="/BannerCart.svg"
+              color={ColorVariant.ORANGE}
+              label="Compra simples e segura"
+            />
+          </HomeBannerBlock>
+          <HomeBannerBlock>
+            <BadgeDescription
+              icon="/BannerBox.svg"
+              color={ColorVariant.BLACK}
+              label="Embalagem mantém o café intacto"
+            />
+          </HomeBannerBlock>
         </HomeBannerSubtitles>
         <HomeBannerSubtitles>
-          <BadgeDescription
-            icon="/BannerClock.svg"
-            color={ColorVariant.YELLOW}
-            label="Entrega rápida e rastreada"
-          />
-          <BadgeDescription
-            icon="/BannerCoffee.svg"
-            color={ColorVariant.PURPLE}
-            label="O café chega fresquinho até você"
-          />
+          <HomeBannerBlock>
+            <BadgeDescription
+              icon="/BannerClock.svg"
+              color={ColorVariant.YELLOW}
+              label="Entrega rápida e rastreada"
+            />
+          </HomeBannerBlock>
+          <HomeBannerBlock>
+            <BadgeDescription
+              icon="/BannerCoffee.svg"
+              color={ColorVariant.PURPLE}
+              label="O café chega fresquinho até você"
+            />
+          </HomeBannerBlock>
         </HomeBannerSubtitles>
       </div>
     </div>
