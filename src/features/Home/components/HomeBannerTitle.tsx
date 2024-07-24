@@ -1,10 +1,10 @@
-import { HomeBannerSubtitles } from "../styles/HomeBannerSubtitles";
-import { TitleBanner } from "../styles/TitleBanner";
-import { HomeBannerTitles } from "../styles/HomeBannerTitles";
-import { BadgeDescription } from "../../../components/BadgeDescription";
-import { ColorVariant } from "../../../types/ColorType";
-import { HomeBannerBlock } from "../styles/HomeBannerBlock";
-import { DescriptionBanner } from "../styles/DescriptionBanner";
+import { BadgeDescription } from "@globalComponents/BadgeDescription";
+import { ColorVariant } from "@globalTypes/ColorVariant";
+import { DescriptionBanner } from "@features/Home/styles/DescriptionBanner";
+import { HomeBannerBlock } from "@features/Home/styles/HomeBannerBlock";
+import { HomeBannerSubtitles } from "@features/Home/styles/HomeBannerSubtitles";
+import { HomeBannerTitles } from "@features/Home/styles/HomeBannerTitles";
+import { TitleBanner } from "@features/Home/styles/TitleBanner";
 
 export function HomeBannerTitle() {
   return (

@@ -1,5 +1,5 @@
+import { device } from '@globalStyles/Devices';
 import styled from 'styled-components';
-import { device } from '../../../styles/Devices';
 
 export const DescriptionBanner = styled.p`
 
