@@ -1,58 +1,61 @@
 import { BadgeDescription } from "@globalComponents/BadgeDescription";
 import { ColorVariant } from "@globalTypes/ColorVariant";
-import { DescriptionBanner } from "@features/Home/styles/DescriptionBanner";
-import { HomeBannerBlock } from "@features/Home/styles/HomeBannerBlock";
-import { HomeBannerSubtitles } from "@features/Home/styles/HomeBannerSubtitles";
-import { HomeBannerTitles } from "@features/Home/styles/HomeBannerTitles";
-import { TitleBanner } from "@features/Home/styles/TitleBanner";
+
+import {
+  DescriptionSection,
+  PanelAreaSubtitles,
+  PanelContainer,
+  SubtitlesSection,
+  TitleSection,
+} from "@features/Home/styles/HomeBannerTitleContainer";
 
 export function HomeBannerTitle() {
   return (
     <div>
       <div>
-        <HomeBannerTitles>
-          <TitleBanner>
+        <PanelContainer>
+          <TitleSection>
             Encontre o café perfeito para qualquer hora do dia
-          </TitleBanner>
-          <DescriptionBanner>
+          </TitleSection>
+          <DescriptionSection>
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
-          </DescriptionBanner>
-        </HomeBannerTitles>
+          </DescriptionSection>
+        </PanelContainer>
       </div>
       <div>
-        <HomeBannerSubtitles>
-          <HomeBannerBlock>
+        <PanelAreaSubtitles>
+          <SubtitlesSection>
             <BadgeDescription
               icon="/BannerCart.svg"
               color={ColorVariant.ORANGE}
               label="Compra simples e segura"
             />
-          </HomeBannerBlock>
-          <HomeBannerBlock>
+          </SubtitlesSection>
+          <SubtitlesSection>
             <BadgeDescription
               icon="/BannerBox.svg"
               color={ColorVariant.BLACK}
               label="Embalagem mantém o café intacto"
             />
-          </HomeBannerBlock>
-        </HomeBannerSubtitles>
-        <HomeBannerSubtitles>
-          <HomeBannerBlock>
+          </SubtitlesSection>
+        </PanelAreaSubtitles>
+        <PanelAreaSubtitles>
+          <SubtitlesSection>
             <BadgeDescription
               icon="/BannerClock.svg"
               color={ColorVariant.YELLOW}
               label="Entrega rápida e rastreada"
             />
-          </HomeBannerBlock>
-          <HomeBannerBlock>
+          </SubtitlesSection>
+          <SubtitlesSection>
             <BadgeDescription
               icon="/BannerCoffee.svg"
               color={ColorVariant.PURPLE}
               label="O café chega fresquinho até você"
             />
-          </HomeBannerBlock>
-        </HomeBannerSubtitles>
+          </SubtitlesSection>
+        </PanelAreaSubtitles>
       </div>
     </div>
   );
