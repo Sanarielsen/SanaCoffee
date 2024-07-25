@@ -1,7 +1,7 @@
 import { device } from '@globalStyles/Devices';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const HomeContainer = styled.div`
+export const BannerContainer = styled.div`
   display: flex;  
   flex-direction: column;
   align-items: center;
@@ -12,5 +12,4 @@ export const HomeContainer = styled.div`
   @media ${device.laptopL} {
     flex-direction: row;
   }
-
-`
+`;

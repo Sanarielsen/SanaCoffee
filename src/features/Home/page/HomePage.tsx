@@ -1,18 +1,25 @@
+import { BannerContainer } from "../styles/BannerContainer";
 import { HomeBannerImage } from "@features/Home/components/HomeBannerImage";
 import { HomeBannerTitle } from "@features/Home/components/HomeBannerTitle";
-import { HomeContainer } from "@features/Home/styles/HomeContainer";
 import { HomeContextFirst } from "@features/Home/styles/HomeContextFirst";
 import { HomeContextSecond } from "@features/Home/styles/HomeContextSecond";
+import { HomeProductsList } from "../components/HomeProductsList";
+import { ProductsContainer } from "../styles/ProductsContainer";
 
 export function HomePage() {
   return (
-    <HomeContainer>
-      <HomeContextFirst>
-        <HomeBannerTitle />
-      </HomeContextFirst>
-      <HomeContextSecond>
-        <HomeBannerImage />
-      </HomeContextSecond>
-    </HomeContainer>
-  )
+    <>
+      <BannerContainer>
+        <HomeContextFirst>
+          <HomeBannerTitle />
+        </HomeContextFirst>
+        <HomeContextSecond>
+          <HomeBannerImage />
+        </HomeContextSecond>
+      </BannerContainer>
+      <ProductsContainer>
+        <HomeProductsList />
+      </ProductsContainer>
+    </>
+  );
 }
