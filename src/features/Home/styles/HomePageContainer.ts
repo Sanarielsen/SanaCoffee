@@ -9,7 +9,12 @@ export const BannerContainer = styled.div`
   width: 100%;
   height: 380px;
 
+  @media ${device.laptop} {
+    height: 100%;
+  }
+
   @media ${device.laptopL} {
+    height: 380px;
     flex-direction: row;
   }
 `;
