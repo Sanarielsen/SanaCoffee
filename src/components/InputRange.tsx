@@ -37,6 +37,7 @@ export function InputRange({ name, value, onChange }: InputRangeProps) {
           min={0}
           max={99}
           value={currentValue}
+          disabled
         />
       </div>
       <InputRangeAddValue

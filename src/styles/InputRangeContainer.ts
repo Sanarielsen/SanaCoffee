@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const InputRangeContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   padding: 8px;
 
@@ -41,58 +42,60 @@ export const InputRangeContainer = styled.div`
 export const InputRangeSubstractValue = styled.button`
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  padding-bottom: 2px;
+
+  border: 0;
+  background: none;
 
   color: #8047F8;
 
-  padding-bottom: 3px;
-  padding-left: 5px;
-  padding-right: 5px;
-
-  border-color: transparent;
+  &:focus {
+    border: 2px solid #4B2995; /* Change border color on focus */
+    outline: none;
+    background: none;
+    box-shadow: none;
+  }
 
   &:hover {
-    color: #4B2995; /* Change background color on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #C47F17;
+    font-weight: bold;
+    outline: none;
+    background: none;
+    box-shadow: none;
   }
 
-  /* Remove all default style of this button */
-  border: none;
-  background: none;
-  margin: 0;
-  outline: none;
-  box-shadow: none;
-  appearance: none;
-
-  &:focus {
-    border: 0;
-    font-weight: bold; /* Change font weight on focus */
-  }
 `;
 
 export const InputRangeAddValue = styled.button`
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  padding-left: 3px;
-  padding-right: 3px;
+  border: 0;
+  background: none;
+
+  width: 20px;
+  height: 20px;
 
   color: #8047F8;
 
-  /* Remove all default style of this button */
-  border: none;
-  background: none;
-  margin: 0;
-  outline: none;
-  box-shadow: none;
-  appearance: none;
-
-  &:hover {
-    color: #4B2995; /* Change background color on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    &:focus {
+    border: 2px solid #4B2995; /* Change border color on focus */
+    outline: none;
+    background: none;
+    box-shadow: none;
   }
 
-  &:focus {
-    border: 0;
-    font-weight: bold; /* Change font weight on focus */
+  &:hover {
+    color: #C47F17;
+    font-weight: bold;
+    outline: none;
+    background: none;
+    box-shadow: none;
   }
 `;
