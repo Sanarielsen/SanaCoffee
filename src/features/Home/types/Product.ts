@@ -1,4 +1,4 @@
-import { ProductImageOption, ProductNameOption } from "./ProductOption";
+import { ProductImageOption, ProductNameOption } from "@globalTypes/ProductOption";
 import { ProductTypeOption } from "./ProductType";
 
 export type Product = {
