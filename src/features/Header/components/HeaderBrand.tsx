@@ -1,7 +1,9 @@
+import { NavLink } from "react-router-dom";
+
 export function HeaderBrand() {
   return (
-    <div>
+    <NavLink to="/" title="Home">
       <img src={"/HeaderLogo.svg"} />
-    </div>
+    </NavLink>
   )
 }

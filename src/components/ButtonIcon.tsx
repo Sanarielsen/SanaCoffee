@@ -1,19 +1,52 @@
-import { ButtonIconContainer } from "@globalStyles/ButtonIconContainer";
+import {
+  ButtonIconContainer,
+  IconSection,
+  IconSectionWithoutTitle,
+  IconTitle,
+} from "@globalStyles/ButtonIconContainer";
+import { ColorType } from "@globalTypes/ColorType";
+import { useState } from "react";
+import { useTheme } from "styled-components";
 
 interface ButtonIconProps {
+  label?: string;
+  type?: string;
+  color: ColorType;
   pathImage: string;
   onClick: () => void;
+  onHover?: () => void;
 }
 
-export function ButtonIcon( {pathImage, onClick}: ButtonIconProps ) {
+export function ButtonIcon({
+  label,
+  color,
+  pathImage,
+  onClick
+}: ButtonIconProps) {
+  const theme = useTheme();
+  const [buttonHasHovered, setButtonHasHovered] = useState(false);
+  
+  const colorButton = buttonHasHovered ? theme[`${color}-hover`] : theme[color];
+
   return (
-    <ButtonIconContainer
-      style={{
-        backgroundColor: "#8047F8",
-      }}
-      onClick={onClick}
+    <ButtonIconContainer 
+      color={colorButton} 
+      onClick={onClick} 
+      onMouseEnter={() => setButtonHasHovered(true)} 
+      onMouseLeave={() => setButtonHasHovered(false)}
     >
-      <img src={pathImage} />
+      {label ? (
+        <>
+          <IconSection>
+            <img src={pathImage} />
+          </IconSection>
+          <IconTitle color={color}>{label}</IconTitle>
+        </>
+      ) : (
+        <IconSectionWithoutTitle>
+          <img src={pathImage} />
+        </IconSectionWithoutTitle>
+      )}
     </ButtonIconContainer>
   );
 }

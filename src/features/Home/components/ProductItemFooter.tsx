@@ -6,6 +6,7 @@ import {
 } from "@features/Home/styles/ProductItemFooterContainer";
 import { InputRange } from "@globalComponents/InputRange";
 import { useState } from "react";
+import { ColorType } from "@globalTypes/ColorType";
 
 interface ProductItemFooterProps {
   nameRange: string;
@@ -37,7 +38,7 @@ export function ProductItemFooter({ nameRange, value }: ProductItemFooterProps) 
         />
       </div>
       <div>
-        <ButtonIcon pathImage="/IconCart.svg" onClick={handleClickAddCurrentItemOnCart} />
+        <ButtonIcon color={ColorType.SECONDARY} pathImage="/IconCart.svg" onClick={handleClickAddCurrentItemOnCart} />
       </div>
     </PanelContainer>
   );

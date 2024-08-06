@@ -8,7 +8,7 @@ export const InputRangeContainer = styled.div`
   padding: 8px;
 
   width: 80px;
-  height: 38px;
+  max-height: 38px;
 
   border-radius: 8px;
 
@@ -23,7 +23,9 @@ export const InputRangeContainer = styled.div`
     outline: none; /* Remove outline */
     width: 20px; /* Adjust width as needed */
     text-align: center; /* Center the text */
+
     background-color: #E6E5E5;
+    font-size: 16px;
   }
 
   &:hover {
