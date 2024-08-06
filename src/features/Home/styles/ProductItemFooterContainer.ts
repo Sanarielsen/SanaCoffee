@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProductItemFooterContainer = styled.div`
+export const PanelContainer = styled.div`
 
   display: flex;
   align-items: center;

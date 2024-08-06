@@ -1,9 +1,9 @@
 import { ButtonIcon } from "@globalComponents/ButtonIcon";
 import {
-  ProductItemFooterContainer,
+  PanelContainer,
   MoneyMetric,
   MoneyValue,
-} from "../styles/ProductItemFooterContainer";
+} from "@features/Home/styles/ProductItemFooterContainer";
 import { InputRange } from "@globalComponents/InputRange";
 import { useState } from "react";
 
@@ -16,13 +16,13 @@ export function ProductItemFooter({ nameRange, value }: ProductItemFooterProps) 
   const [quantityProduct, setQuantityProduct] = useState(0);
 
   const handleClickAddCurrentItemOnCart = () => {
-    console.log("handleClickAddCurrentItemOnCart(" + nameRange + " | " + value + " | " + quantityProduct + ");");
+    //Add logic to add item on cart
     setQuantityProduct(() => 0);
   }
 
   //Component capable receive value of product with ever 3 numbers in total.
   return (
-    <ProductItemFooterContainer>
+    <PanelContainer>
       <div>
         <MoneyMetric>R$</MoneyMetric>
         <MoneyValue>{value}</MoneyValue>
@@ -39,6 +39,6 @@ export function ProductItemFooter({ nameRange, value }: ProductItemFooterProps) 
       <div>
         <ButtonIcon pathImage="/IconCart.svg" onClick={handleClickAddCurrentItemOnCart} />
       </div>
-    </ProductItemFooterContainer>
+    </PanelContainer>
   );
 }

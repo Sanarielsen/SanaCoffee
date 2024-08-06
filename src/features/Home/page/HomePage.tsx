@@ -1,10 +1,12 @@
-import { BannerContainer } from "../styles/BannerContainer";
 import { HomeBannerImage } from "@features/Home/components/HomeBannerImage";
 import { HomeBannerTitle } from "@features/Home/components/HomeBannerTitle";
-import { HomeContextFirst } from "@features/Home/styles/HomeContextFirst";
-import { HomeContextSecond } from "@features/Home/styles/HomeContextSecond";
-import { HomeProductsList } from "../components/HomeProductsList";
-import { ProductsContainer } from "../styles/ProductsContainer";
+import { HomeProductsList } from "@features/Home/components/HomeProductsList";
+import {
+  BannerContainer,
+  HomeContextFirst,
+  HomeContextSecond,
+  ProductsContainer,
+} from "@features/Home/styles/HomePageContainer";
 
 export function HomePage() {
   return (

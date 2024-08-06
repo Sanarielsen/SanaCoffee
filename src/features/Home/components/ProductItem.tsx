@@ -1,36 +1,41 @@
-import { ProductItemContainer } from "../styles/ProductItemContainer";
-import { ColorType } from "@globalTypes/ColorType";
-import { ProductItemImage } from "../styles/ProductItemImage";
-import { ProductItemBadge } from "../styles/ProductItemBadge";
+import {
+  PanelProducts,
+  SectionDescription,
+  SectionImage,
+  SectionItem,
+  SectionItemBadge,
+  SectionTitle,
+} from "@features/Home/styles/ProductItemContainer";
 import { BadgeTopic } from "@globalComponents/BadgeTopic";
-import { ProductItemTitle, ProductItemDescription, ProductItemSection } from "../styles/ProductItemTitle";
+import { ColorType } from "@globalTypes/ColorType";
+import { Product } from "@features/Home/types/Product";
 import { ProductItemFooter } from "./ProductItemFooter";
-import { Product } from "../types/Product";
 
 interface ProductItemProps {
   product: Product;
 }
 
-export function ProductItem( { product }: ProductItemProps ) {
-  console.log("Produto: ", product); 
-
+export function ProductItem({ product }: ProductItemProps) {
   return (
-    <ProductItemContainer>
-      <ProductItemImage>
+    <PanelProducts>
+      <SectionImage>
         <img src={"/ProductItem" + product.image + ".png"} />
-      </ProductItemImage>
-      <ProductItemBadge>
+      </SectionImage>
+      <SectionItemBadge>
         <BadgeTopic labels={product.types} type={ColorType.PRIMARY} />
-      </ProductItemBadge>
-      <ProductItemSection>
-        <ProductItemTitle>{product.name}</ProductItemTitle>
-      </ProductItemSection>
-      <ProductItemSection>
-        <ProductItemDescription>{product.description}</ProductItemDescription>
-      </ProductItemSection>
-      <ProductItemSection>
-        <ProductItemFooter nameRange={"productQuantity" + product.id} value={product.value} />
-      </ProductItemSection>
-    </ProductItemContainer>
-  )
+      </SectionItemBadge>
+      <SectionItem>
+        <SectionTitle>{product.name}</SectionTitle>
+      </SectionItem>
+      <SectionItem>
+        <SectionDescription>{product.description}</SectionDescription>
+      </SectionItem>
+      <SectionItem>
+        <ProductItemFooter
+          nameRange={"productQuantity" + product.id}
+          value={product.value}
+        />
+      </SectionItem>
+    </PanelProducts>
+  );
 }

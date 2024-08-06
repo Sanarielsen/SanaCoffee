@@ -1,7 +1,7 @@
 import { device } from "@globalStyles/Devices";
 import styled from "styled-components";
 
-export const ProductsListContainer = styled.div`
+export const PanelProducts = styled.div`
   display: grid;
   justify-items: center;
 
