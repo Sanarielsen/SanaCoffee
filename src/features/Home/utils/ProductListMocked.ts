@@ -1,4 +1,4 @@
-import { ProductImageOption, ProductNameOption } from "../types/ProductOption";
+import { ProductImageOption, ProductNameOption } from "@globalTypes/ProductOption";
 import { ProductTypeOption } from "../types/ProductType";
 
 export const productListMocked = [
