@@ -1,9 +1,9 @@
+import { CartReview } from "@features/Cart/components/CartReview";
+
 export function CartPage() {
   return (
     <div>
-      <h1>Cart Page</h1>
-
-      <p>Review Section</p>
+      <CartReview />
 
       <p>Address Section</p>
 
