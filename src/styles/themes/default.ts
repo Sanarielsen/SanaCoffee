@@ -1,6 +1,7 @@
 export const defaultTheme = {
   'primary': '#DBAC2C',
   'primary-hover': '#C47F17',
+  'primary-disabled': '#E6E5E5',
   'secondary': '#8047F8',
   'secondary-hover': '#4B2995',
   'secondary-outlined': '#E6E5E5',
@@ -8,6 +9,9 @@ export const defaultTheme = {
 
   'white': '#FFFFFF',
   'black': '#574F4D',
+
+  'text-base': '#574F4D',
+  'text-subtitle': '#403937',
 
   'zinc-200': '#e4e4e7',
   'zinc-400': '#a1a1aa',

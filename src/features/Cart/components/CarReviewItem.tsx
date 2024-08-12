@@ -17,10 +17,11 @@ import {
 
 interface CartReviewItemProps {
   item: CartItem;
+  onChangeQuantity: (id: number, currentQuantity: number) => void;
   onDeleteItem: (id: number) => void;
 }
 
-export function CartReviewItem({ item, onDeleteItem }: CartReviewItemProps) {
+export function CartReviewItem({ item, onChangeQuantity, onDeleteItem }: CartReviewItemProps) {
   const [itemQuantity, setItemQuantity] = useState(item.quantity);
 
   return (
@@ -42,20 +43,22 @@ export function CartReviewItem({ item, onDeleteItem }: CartReviewItemProps) {
               value={itemQuantity}
               onChange={(quantity) => {
                 setItemQuantity(quantity);
+                onChangeQuantity(item.id, quantity);
               }}
             />
             <ButtonIcon
               label="Remover"
+              type="secondary"
               color={ColorType.SECONDARY_OUTLINED}
               pathImage="/IconThrashPurple.svg"
               onClick={() => {
                 onDeleteItem(item.id);
-              }}
+              }}              
             />
           </ItemActions>
         </ItemDescrition>
       </ItemSection>
-      <ItemValue>R$ {item.quantity * item.value}</ItemValue>
+      <ItemValue>R$ {(item.quantity * item.value).toFixed(2)}</ItemValue>
     </CartReviewItemContainer>
   );
 }
