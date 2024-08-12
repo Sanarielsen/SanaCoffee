@@ -1,3 +1,5 @@
+import { ButtonContainer } from "@globalStyles/ButtonContainer";
+import { CartReviewDetails } from "./CartReviewDetails";
 import { CartReviewListItem } from "./CartReviewListItem";
 import {
   CartReviewPanel,
@@ -10,14 +12,9 @@ export function CartReview() {
       <TitleCartReview>Cafés selecionados</TitleCartReview>
 
       <CartReviewPanel>
-        {
-          //Listagem de produtos
-        }
         <CartReviewListItem />
-        {
-          //Informações gerais do Carrinho
-        }
-        <button>Confirmar Pedido</button>
+        <CartReviewDetails />
+        <ButtonContainer>CONFIRMAR PEDIDO</ButtonContainer>
       </CartReviewPanel>
     </>
   );

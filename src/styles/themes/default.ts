@@ -9,6 +9,9 @@ export const defaultTheme = {
   'white': '#FFFFFF',
   'black': '#574F4D',
 
+  'text-base': '#574F4D',
+  'text-subtitle': '#403937',
+
   'zinc-200': '#e4e4e7',
   'zinc-400': '#a1a1aa',
 
