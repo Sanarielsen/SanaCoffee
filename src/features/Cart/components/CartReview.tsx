@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { ButtonContainer } from '@globalStyles/ButtonContainer';
 import { CartReviewDetails } from './CartReviewDetails';
 import { CartReviewListItem } from './CartReviewListItem';
 import { CartItem } from '@features/Cart/types/CartItem';
@@ -9,6 +8,7 @@ import {
   CartReviewPanel,
   TitleCartReview,
 } from '@features/Cart/styles/CartReviewContainer';
+import { ButtonContainer } from '@globalStyles/ButtonContainer';
 
 export function CartReview() {
   const [cartItens, setCartItens] = useState<CartItem[]>(cartItensMocked);
@@ -43,13 +43,7 @@ export function CartReview() {
           onDeleteItem={handleDeleteItem}
         />
         <CartReviewDetails items={cartItens} />
-        <ButtonContainer
-          disabled={totalCart <= 0}
-          /* Desenvolver a tela que mostra "Pedido realizado com sucesso" */
-          onClick={() => {
-            console.log('Chama a próxima tela');
-          }}
-        >
+        <ButtonContainer type="submit" disabled={totalCart <= 0}>
           CONFIRMAR PEDIDO
         </ButtonContainer>
       </CartReviewPanel>

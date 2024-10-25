@@ -51,8 +51,8 @@ export function CartReviewItem({
               }}
             />
             <ButtonIcon
+              type="button"
               label="Remover"
-              type="secondary"
               color={ColorType.SECONDARY_OUTLINED}
               pathImage="/IconThrashPurple.svg"
               onClick={() => {
