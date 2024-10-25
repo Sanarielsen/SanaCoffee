@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const InputRangeContainer = styled.div`
   display: flex;
@@ -12,11 +12,11 @@ export const InputRangeContainer = styled.div`
 
   border-radius: 8px;
 
-  background-color: #E6E5E5;
+  background-color: #e6e5e5;
 
   border-color: transparent;
 
-  input[type="number"] {
+  input[type='number'] {
     -moz-appearance: textfield; /* Remove default Firefox styling */
     appearance: none; /* Remove default styling in other browsers */
     border: none; /* Remove border */
@@ -24,18 +24,18 @@ export const InputRangeContainer = styled.div`
     width: 20px; /* Adjust width as needed */
     text-align: center; /* Center the text */
 
-    background-color: #E6E5E5;
+    background-color: #e6e5e5;
     font-size: 16px;
   }
 
   &:hover {
-    color: #E6E5E5;
+    color: #e6e5e5;
     cursor: pointer; /* Change cursor to pointer on hover */
   }
 
   /* Remove the up and down arrows in WebKit browsers (Chrome, Safari) */
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
@@ -54,23 +54,22 @@ export const InputRangeSubstractValue = styled.button`
   border: 0;
   background: none;
 
-  color: #8047F8;
+  color: #8047f8;
 
   &:focus {
-    border: 2px solid #4B2995; /* Change border color on focus */
+    border: 2px solid #4b2995; /* Change border color on focus */
     outline: none;
     background: none;
     box-shadow: none;
   }
 
   &:hover {
-    color: #C47F17;
+    color: #c47f17;
     font-weight: bold;
     outline: none;
     background: none;
     box-shadow: none;
   }
-
 `;
 
 export const InputRangeAddValue = styled.button`
@@ -84,17 +83,17 @@ export const InputRangeAddValue = styled.button`
   width: 20px;
   height: 20px;
 
-  color: #8047F8;
+  color: #8047f8;
 
-    &:focus {
-    border: 2px solid #4B2995; /* Change border color on focus */
+  &:focus {
+    border: 2px solid #4b2995; /* Change border color on focus */
     outline: none;
     background: none;
     box-shadow: none;
   }
 
   &:hover {
-    color: #C47F17;
+    color: #c47f17;
     font-weight: bold;
     outline: none;
     background: none;

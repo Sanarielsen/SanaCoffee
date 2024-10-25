@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const BadgeTopicContainer = styled.div`
   display: flex;
@@ -7,5 +7,5 @@ export const BadgeTopicContainer = styled.div`
   padding: 4px 8px;
   border-radius: 100px;
 
-  color: #574F4D;
+  color: #574f4d;
 `;

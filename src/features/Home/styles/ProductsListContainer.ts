@@ -1,5 +1,5 @@
-import { device } from "@globalStyles/Devices";
-import styled from "styled-components";
+import { device } from '@globalStyles/Devices';
+import styled from 'styled-components';
 
 export const PanelProducts = styled.div`
   display: grid;
@@ -10,15 +10,15 @@ export const PanelProducts = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 
-  @media ${device.mobileS} { 
+  @media ${device.mobileS} {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media ${device.laptopL} { 
+  @media ${device.laptopL} {
     grid-template-columns: repeat(4, 1fr);
   }
 `;

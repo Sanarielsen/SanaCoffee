@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { styled } from 'styled-components';
 
 export const ButtonContainer = styled.button`
   margin: 8px;
@@ -24,4 +24,4 @@ export const ButtonContainer = styled.button`
   border: none; /* Remove border */
   outline: none; /* Remove outline */
   text-align: center; /* Center the text */
-`
+`;

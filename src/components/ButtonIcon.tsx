@@ -3,10 +3,10 @@ import {
   IconSection,
   IconSectionWithoutTitle,
   IconTitle,
-} from "@globalStyles/ButtonIconContainer";
-import { ColorType } from "@globalTypes/ColorType";
-import { useState } from "react";
-import { useTheme } from "styled-components";
+} from '@globalStyles/ButtonIconContainer';
+import { ColorType } from '@globalTypes/ColorType';
+import { useState } from 'react';
+import { useTheme } from 'styled-components';
 
 interface ButtonIconProps {
   label?: string;
@@ -21,18 +21,18 @@ export function ButtonIcon({
   label,
   color,
   pathImage,
-  onClick
+  onClick,
 }: ButtonIconProps) {
   const theme = useTheme();
   const [buttonHasHovered, setButtonHasHovered] = useState(false);
-  
+
   const colorButton = buttonHasHovered ? theme[`${color}-hover`] : theme[color];
 
   return (
-    <ButtonIconContainer 
-      color={colorButton} 
-      onClick={onClick} 
-      onMouseEnter={() => setButtonHasHovered(true)} 
+    <ButtonIconContainer
+      color={colorButton}
+      onClick={onClick}
+      onMouseEnter={() => setButtonHasHovered(true)}
       onMouseLeave={() => setButtonHasHovered(false)}
     >
       {label ? (

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 import { device } from './Devices';
 
 export const GlobalStyle = createGlobalStyle`

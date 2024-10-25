@@ -1,10 +1,8 @@
-import { Badge } from "@globalComponents/Badge";
-import { ColorType } from "@globalTypes/ColorType";
-import { NavLink } from "react-router-dom";
+import { Badge } from '@globalComponents/Badge';
+import { ColorType } from '@globalTypes/ColorType';
+import { NavLink } from 'react-router-dom';
 
 export function HeaderCart() {
-  
-
   return (
     <>
       <div>
@@ -12,10 +10,10 @@ export function HeaderCart() {
           <Badge
             icon="./HeaderCart.svg"
             type={ColorType.DEFAULT}
-            onClick={() => console.log("Cart selecionado")}
+            onClick={() => console.log('Cart selecionado')}
           />
         </NavLink>
       </div>
     </>
-  )
+  );
 }

@@ -5,12 +5,10 @@ interface CartReviewDetailsContainerProps {
 }
 
 export const CartReviewDetailsContainer = styled.div`
-
   padding-bottom: 24px;
 `;
 
 export const ValueSection = styled.div<CartReviewDetailsContainerProps>`
-
   display: flex;
   justify-content: space-between;
 
@@ -18,12 +16,11 @@ export const ValueSection = styled.div<CartReviewDetailsContainerProps>`
 
   font-family: 'Roboto', normal;
   font-size: 14px;
-  
+
   color: ${(props) => props.color};
 `;
 
 export const TotalSection = styled.span<CartReviewDetailsContainerProps>`
-
   display: flex;
   justify-content: space-between;
 
@@ -32,5 +29,4 @@ export const TotalSection = styled.span<CartReviewDetailsContainerProps>`
   font-weight: bold;
 
   color: ${(props) => props.color};
-
 `;

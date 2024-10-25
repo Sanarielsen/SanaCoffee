@@ -5,11 +5,11 @@ import {
   SectionItem,
   SectionItemBadge,
   SectionTitle,
-} from "@features/Home/styles/ProductItemContainer";
-import { BadgeTopic } from "@globalComponents/BadgeTopic";
-import { ColorType } from "@globalTypes/ColorType";
-import { Product } from "@features/Home/types/Product";
-import { ProductItemFooter } from "./ProductItemFooter";
+} from '@features/Home/styles/ProductItemContainer';
+import { BadgeTopic } from '@globalComponents/BadgeTopic';
+import { ColorType } from '@globalTypes/ColorType';
+import { Product } from '@features/Home/types/Product';
+import { ProductItemFooter } from './ProductItemFooter';
 
 interface ProductItemProps {
   product: Product;
@@ -19,7 +19,7 @@ export function ProductItem({ product }: ProductItemProps) {
   return (
     <PanelProducts>
       <SectionImage>
-        <img src={"/ProductItem" + product.image + ".png"} />
+        <img src={'/ProductItem' + product.image + '.png'} />
       </SectionImage>
       <SectionItemBadge>
         <BadgeTopic labels={product.types} type={ColorType.PRIMARY} />
@@ -32,7 +32,7 @@ export function ProductItem({ product }: ProductItemProps) {
       </SectionItem>
       <SectionItem>
         <ProductItemFooter
-          nameRange={"productQuantity" + product.id}
+          nameRange={'productQuantity' + product.id}
           value={product.value}
         />
       </SectionItem>

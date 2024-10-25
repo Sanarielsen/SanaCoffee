@@ -1,14 +1,14 @@
 export const defaultTheme = {
-  'primary': '#DBAC2C',
+  primary: '#DBAC2C',
   'primary-hover': '#C47F17',
   'primary-disabled': '#E6E5E5',
-  'secondary': '#8047F8',
+  secondary: '#8047F8',
   'secondary-hover': '#4B2995',
   'secondary-outlined': '#E6E5E5',
   'secondary-outlined-hover': '#D7D5D5',
 
-  'white': '#FFFFFF',
-  'black': '#574F4D',
+  white: '#FFFFFF',
+  black: '#574F4D',
 
   'text-base': '#574F4D',
   'text-subtitle': '#403937',
@@ -33,4 +33,4 @@ export const defaultTheme = {
   'red-700': '#7A1921',
 
   'yellow-500': '#FBA94C',
-}
+};

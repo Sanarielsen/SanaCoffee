@@ -1,6 +1,6 @@
 export enum ColorVariant {
-  ORANGE = "orange",
-  YELLOW = "yellow",
-  BLACK = "black",
-  PURPLE = "purple"
+  ORANGE = 'orange',
+  YELLOW = 'yellow',
+  BLACK = 'black',
+  PURPLE = 'purple',
 }

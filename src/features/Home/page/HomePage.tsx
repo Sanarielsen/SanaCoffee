@@ -1,12 +1,12 @@
-import { HomeBannerImage } from "@features/Home/components/HomeBannerImage";
-import { HomeBannerTitle } from "@features/Home/components/HomeBannerTitle";
-import { HomeProductsList } from "@features/Home/components/HomeProductsList";
+import { HomeBannerImage } from '@features/Home/components/HomeBannerImage';
+import { HomeBannerTitle } from '@features/Home/components/HomeBannerTitle';
+import { HomeProductsList } from '@features/Home/components/HomeProductsList';
 import {
   BannerContainer,
   HomeContextFirst,
   HomeContextSecond,
   ProductsContainer,
-} from "@features/Home/styles/HomePageContainer";
+} from '@features/Home/styles/HomePageContainer';
 
 export function HomePage() {
   return (

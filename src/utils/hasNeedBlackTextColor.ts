@@ -1,1 +1,1 @@
-export const hasNeedBlackTextColor = ["secondary-outlined"];
+export const hasNeedBlackTextColor = ['secondary-outlined'];
