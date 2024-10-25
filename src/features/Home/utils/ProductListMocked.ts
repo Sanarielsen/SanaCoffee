@@ -1,5 +1,8 @@
-import { ProductImageOption, ProductNameOption } from "@globalTypes/ProductOption";
-import { ProductTypeOption } from "../types/ProductType";
+import {
+  ProductImageOption,
+  ProductNameOption,
+} from '@globalTypes/ProductOption';
+import { ProductTypeOption } from '../types/ProductType';
 
 export const productListMocked = [
   {
@@ -7,7 +10,7 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL],
     image: ProductImageOption.EXPRESSO,
     name: ProductNameOption.EXPRESSO,
-    description: "O tradicional café feito com água quente e grãos moídos",
+    description: 'O tradicional café feito com água quente e grãos moídos',
     value: 20.5,
   },
   {
@@ -15,7 +18,7 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL],
     image: ProductImageOption.AMERICANO,
     name: ProductNameOption.AMERICANO,
-    description: "Expresso diluído, menos intenso que o tradicional",
+    description: 'Expresso diluído, menos intenso que o tradicional',
     value: 12.1,
   },
   {
@@ -23,7 +26,7 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL],
     image: ProductImageOption.EXPRESSO_CREMOSO,
     name: ProductNameOption.EXPRESSO_CREMOSO,
-    description: "Café expresso tradicional com espuma cremosa",
+    description: 'Café expresso tradicional com espuma cremosa',
     value: 12.1,
   },
   {
@@ -31,7 +34,7 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL, ProductTypeOption.GELADO],
     image: ProductImageOption.EXPRESSO,
     name: ProductNameOption.EXPRESSO,
-    description: "Bebida preparada com café expresso e cubos de gelo",
+    description: 'Bebida preparada com café expresso e cubos de gelo',
     value: 12.1,
   },
   {
@@ -39,7 +42,7 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL, ProductTypeOption.COM_LEITE],
     image: ProductImageOption.CAFE_COM_LEITE,
     name: ProductNameOption.CAFE_COM_LEITE,
-    description: "Meio a meio de expresso tradicional com leite vaporizado",
+    description: 'Meio a meio de expresso tradicional com leite vaporizado',
     value: 20.5,
   },
   {
@@ -47,7 +50,8 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL, ProductTypeOption.COM_LEITE],
     image: ProductImageOption.LATTE,
     name: ProductNameOption.LATTE,
-    description: "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+    description:
+      'Uma dose de café expresso com o dobro de leite e espuma cremosa',
     value: 20.5,
   },
   {
@@ -55,7 +59,8 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL, ProductTypeOption.COM_LEITE],
     image: ProductImageOption.CAPUCCINO,
     name: ProductNameOption.CAPUCCINO,
-    description: "Bebida com canela feita de doses iguais de café, leite e espuma",
+    description:
+      'Bebida com canela feita de doses iguais de café, leite e espuma',
     value: 20.5,
   },
   {
@@ -63,7 +68,8 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL, ProductTypeOption.COM_LEITE],
     image: ProductImageOption.MACCHIATO,
     name: ProductNameOption.MACCHIATO,
-    description: "Café expresso misturado com um pouco de leite quente e espuma",
+    description:
+      'Café expresso misturado com um pouco de leite quente e espuma',
     value: 20.5,
   },
   {
@@ -71,7 +77,7 @@ export const productListMocked = [
     types: [ProductTypeOption.TRADICIONAL, ProductTypeOption.COM_LEITE],
     image: ProductImageOption.MOCHACCINO,
     name: ProductNameOption.MOCHACCINO,
-    description: "Café expresso com calda de chocolate, pouco leite e espuma",
+    description: 'Café expresso com calda de chocolate, pouco leite e espuma',
     value: 20.5,
   },
   {
@@ -79,15 +85,20 @@ export const productListMocked = [
     types: [ProductTypeOption.ESPECIAL, ProductTypeOption.COM_LEITE],
     image: ProductImageOption.CHOCOLATE_QUENTE,
     name: ProductNameOption.CHOCOLATE_QUENTE,
-    description: "Bebida feita com chocolate dissolvido no leite quente e café",
+    description: 'Bebida feita com chocolate dissolvido no leite quente e café',
     value: 20.5,
   },
   {
     id: 11,
-    types: [ProductTypeOption.ESPECIAL, ProductTypeOption.ALCOOLICO, ProductTypeOption.GELADO],
+    types: [
+      ProductTypeOption.ESPECIAL,
+      ProductTypeOption.ALCOOLICO,
+      ProductTypeOption.GELADO,
+    ],
     image: ProductImageOption.CUBANO,
     name: ProductNameOption.CUBANO,
-    description: "Drink gelado de café expresso com rum, creme de leite e hortelã",
+    description:
+      'Drink gelado de café expresso com rum, creme de leite e hortelã',
     value: 20.5,
   },
   {
@@ -95,7 +106,7 @@ export const productListMocked = [
     types: [ProductTypeOption.ESPECIAL],
     image: ProductImageOption.HAVAIANO,
     name: ProductNameOption.HAVAIANO,
-    description: "Bebida adocicada preparada com café e leite de coco",
+    description: 'Bebida adocicada preparada com café e leite de coco',
     value: 20.5,
   },
   {
@@ -103,7 +114,7 @@ export const productListMocked = [
     types: [ProductTypeOption.ESPECIAL],
     image: ProductImageOption.ARABE,
     name: ProductNameOption.ARABE,
-    description: "Bebida preparada com grãos de café árabe e especiarias",
+    description: 'Bebida preparada com grãos de café árabe e especiarias',
     value: 20.5,
   },
   {
@@ -111,7 +122,7 @@ export const productListMocked = [
     types: [ProductTypeOption.ESPECIAL, ProductTypeOption.ALCOOLICO],
     image: ProductImageOption.IRLANDES,
     name: ProductNameOption.IRLANDES,
-    description: "Bebida a base de café, uísque irlandês, açúcar e chantilly",
+    description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
     value: 20.5,
   },
 ];

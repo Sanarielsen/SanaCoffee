@@ -1,5 +1,5 @@
-import { BadgeDescription } from "@globalComponents/BadgeDescription";
-import { ColorVariant } from "@globalTypes/ColorVariant";
+import { BadgeDescription } from '@globalComponents/BadgeDescription';
+import { ColorVariant } from '@globalTypes/ColorVariant';
 
 import {
   DescriptionSection,
@@ -7,7 +7,7 @@ import {
   PanelContainer,
   SubtitlesSection,
   TitleSection,
-} from "@features/Home/styles/HomeBannerTitleContainer";
+} from '@features/Home/styles/HomeBannerTitleContainer';
 
 export function HomeBannerTitle() {
   return (

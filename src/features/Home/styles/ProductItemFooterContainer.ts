@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 export const PanelContainer = styled.div`
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 export const MoneyMetric = styled.span`
-
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -18,7 +16,6 @@ export const MoneyMetric = styled.span`
 `;
 
 export const MoneyValue = styled.span`
-
   font-family: 'Baloo 2', sans-serif;
   font-style: normal;
   font-weight: 800;

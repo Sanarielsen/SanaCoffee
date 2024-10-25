@@ -2,7 +2,6 @@ import { device } from '@globalStyles/Devices';
 import styled from 'styled-components';
 
 export const DescriptionSection = styled.p`
-
   font-size: 20px;
   color: #403937;
 
@@ -18,7 +17,7 @@ export const PanelAreaSubtitles = styled.div`
   justify-content: space-around;
 
   margin: 24px 0;
-  fontSize: 16px;
+  fontsize: 16px;
 `;
 
 export const PanelContainer = styled.div`

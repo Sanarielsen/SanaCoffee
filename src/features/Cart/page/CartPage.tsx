@@ -1,4 +1,4 @@
-import { CartReview } from "@features/Cart/components/CartReview";
+import { CartReview } from '@features/Cart/components/CartReview';
 
 export function CartPage() {
   return (

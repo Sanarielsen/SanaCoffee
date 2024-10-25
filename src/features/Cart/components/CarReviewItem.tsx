@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { ButtonIcon } from "@globalComponents/ButtonIcon";
-import { ColorType } from "@globalTypes/ColorType";
-import { InputRange } from "@globalComponents/InputRange";
+import { ButtonIcon } from '@globalComponents/ButtonIcon';
+import { ColorType } from '@globalTypes/ColorType';
+import { InputRange } from '@globalComponents/InputRange';
 
-import { CartItem } from "@features/Cart/types/CartItem";
+import { CartItem } from '@features/Cart/types/CartItem';
 import {
   CartReviewItemContainer,
   ItemActions,
@@ -13,7 +13,7 @@ import {
   ItemSection,
   ItemTitle,
   ItemValue,
-} from "@features/Cart/styles/CartReviewItemContainer";
+} from '@features/Cart/styles/CartReviewItemContainer';
 
 interface CartReviewItemProps {
   item: CartItem;
@@ -21,7 +21,11 @@ interface CartReviewItemProps {
   onDeleteItem: (id: number) => void;
 }
 
-export function CartReviewItem({ item, onChangeQuantity, onDeleteItem }: CartReviewItemProps) {
+export function CartReviewItem({
+  item,
+  onChangeQuantity,
+  onDeleteItem,
+}: CartReviewItemProps) {
   const [itemQuantity, setItemQuantity] = useState(item.quantity);
 
   return (
@@ -53,7 +57,7 @@ export function CartReviewItem({ item, onChangeQuantity, onDeleteItem }: CartRev
               pathImage="/IconThrashPurple.svg"
               onClick={() => {
                 onDeleteItem(item.id);
-              }}              
+              }}
             />
           </ItemActions>
         </ItemDescrition>

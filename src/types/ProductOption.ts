@@ -12,7 +12,7 @@ export enum ProductImageOption {
   IRLANDES = 'Irlandes',
   LATTE = 'Latte',
   MACCHIATO = 'Macchiato',
-  MOCHACCINO = 'Mochaccino'
+  MOCHACCINO = 'Mochaccino',
 }
 
 export enum ProductNameOption {
@@ -29,5 +29,5 @@ export enum ProductNameOption {
   IRLANDES = 'Irlandes',
   LATTE = 'Latte',
   MACCHIATO = 'Macchiato',
-  MOCHACCINO = 'Mochaccino'
+  MOCHACCINO = 'Mochaccino',
 }
