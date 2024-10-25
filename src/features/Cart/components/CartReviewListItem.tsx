@@ -1,8 +1,13 @@
-import { Divider } from "@globalStyles/Divider";
+import { Divider } from '@globalStyles/Divider';
 
-import { CartItem } from "@features/Cart/types/CartItem";
-import { CartReviewEmptyContainer, TextDescription, TextLink, TextLinkContainer } from "@features/Cart/styles/CartReviewListItemContainer";
-import { CartReviewItem } from "./CarReviewItem";
+import { CartItem } from '@features/Cart/types/CartItem';
+import {
+  CartReviewEmptyContainer,
+  TextDescription,
+  TextLink,
+  TextLinkContainer,
+} from '@features/Cart/styles/CartReviewListItemContainer';
+import { CartReviewItem } from './CarReviewItem';
 
 interface CartReviewListItemProps {
   items: CartItem[];
@@ -10,32 +15,37 @@ interface CartReviewListItemProps {
   onDeleteItem: (id: number) => void;
 }
 
-export function CartReviewListItem({ items, onChangeItem, onDeleteItem }: CartReviewListItemProps) { 
-
+export function CartReviewListItem({
+  items,
+  onChangeItem,
+  onDeleteItem,
+}: CartReviewListItemProps) {
   if (items.length === 0) {
     return (
       <>
-        <CartReviewEmptyContainer>      
+        <CartReviewEmptyContainer>
           <TextDescription>Seu carrinho está vazio</TextDescription>
-          <TextDescription>Adicione ao menos um item pelo cardápio</TextDescription>
+          <TextDescription>
+            Adicione ao menos um item pelo cardápio
+          </TextDescription>
           <TextLinkContainer>
             <TextLink href="/">Voltar ao cardápio</TextLink>
           </TextLinkContainer>
         </CartReviewEmptyContainer>
-        <Divider />       
+        <Divider />
       </>
-    )
+    );
   }
 
   return items.map((item) => {
     return (
       <>
         <div key={item.id}>
-          <CartReviewItem 
+          <CartReviewItem
             key={item.id}
-            item={item} 
+            item={item}
             onChangeQuantity={onChangeItem}
-            onDeleteItem={onDeleteItem} 
+            onDeleteItem={onDeleteItem}
           />
           <Divider />
         </div>

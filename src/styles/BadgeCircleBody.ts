@@ -1,17 +1,17 @@
-import styled from "styled-components";
-import { device } from "./Devices";
+import styled from 'styled-components';
+import { device } from './Devices';
 
 export const BadgeCircleBody = styled.div`
   display: flex;
   align-items: center;
 
-  color: #574F4D;
+  color: #574f4d;
 
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     justify-content: center;
   }
 
-  @media ${device.laptopL} { 
+  @media ${device.laptopL} {
     justify-content: left;
   }
 `;

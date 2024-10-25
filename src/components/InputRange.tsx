@@ -2,8 +2,8 @@ import {
   InputRangeAddValue,
   InputRangeContainer,
   InputRangeSubstractValue,
-} from "@globalStyles/InputRangeContainer";
-import { useState } from "react";
+} from '@globalStyles/InputRangeContainer';
+import { useState } from 'react';
 
 interface InputRangeProps {
   name: string;
@@ -14,7 +14,7 @@ interface InputRangeProps {
 export function InputRange({ name, value, onChange }: InputRangeProps) {
   const [currentValue, setCurrentValue] = useState<number>(value);
 
-  if ( value !== currentValue ) {
+  if (value !== currentValue) {
     setCurrentValue(value);
   }
 
@@ -22,9 +22,9 @@ export function InputRange({ name, value, onChange }: InputRangeProps) {
     <InputRangeContainer>
       <InputRangeSubstractValue
         onClick={() => {
-          if (currentValue > 0) { 
-            setCurrentValue(currentValue - 1)
-            onChange(currentValue - 1)
+          if (currentValue > 0) {
+            setCurrentValue(currentValue - 1);
+            onChange(currentValue - 1);
           }
         }}
       >

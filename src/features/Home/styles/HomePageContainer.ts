@@ -1,8 +1,8 @@
 import { device } from '@globalStyles/Devices';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const BannerContainer = styled.div`
-  display: flex;  
+  display: flex;
   flex-direction: column;
   align-items: center;
 
@@ -20,8 +20,7 @@ export const BannerContainer = styled.div`
 `;
 
 export const HomeContextFirst = styled.div`
-
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     width: 100%;
     height: 100%;
   }
@@ -37,7 +36,7 @@ export const HomeContextSecond = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     width: 100%;
     height: 100%;
   }

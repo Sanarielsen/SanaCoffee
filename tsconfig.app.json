@@ -22,7 +22,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    
+
     /* Imports Path */
     "baseUrl": ".",
     "paths": {
@@ -30,8 +30,8 @@
       "@globalComponents/*": ["./src/components/*"],
       "@globalLayouts/*": ["./src/layouts/*"],
       "@globalStyles/*": ["./src/styles/*"],
-      "@globalTypes/*": ["./src/types/*"],
-    },
+      "@globalTypes/*": ["./src/types/*"]
+    }
   },
   "include": ["src"]
 }

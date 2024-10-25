@@ -1,5 +1,5 @@
-import { Badge } from "@globalComponents/Badge";
-import { ColorType } from "@globalTypes/ColorType";
+import { Badge } from '@globalComponents/Badge';
+import { ColorType } from '@globalTypes/ColorType';
 
 export function HeaderAddress() {
   return (
@@ -9,7 +9,7 @@ export function HeaderAddress() {
           icon="./AddressIcon.svg"
           label="Rua Feira de Montana Linda, 1234"
           type={ColorType.INFO}
-          onClick={() => console.log("Endereço selecionado")}
+          onClick={() => console.log('Endereço selecionado')}
         />
       </div>
     </>

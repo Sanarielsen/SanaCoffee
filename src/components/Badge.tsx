@@ -1,6 +1,6 @@
-import { BadgeContainer } from "@globalStyles/BadgeContainer";
-import { BadgeContext } from "@globalStyles/BadgeContext";
-import { ColorType } from "@globalTypes/ColorType";
+import { BadgeContainer } from '@globalStyles/BadgeContainer';
+import { BadgeContext } from '@globalStyles/BadgeContext';
+import { ColorType } from '@globalTypes/ColorType';
 
 interface BadgeProps {
   icon?: string;
@@ -10,26 +10,26 @@ interface BadgeProps {
 }
 
 const BadgeColors = {
-  primary: "#F1E9C9",
-  secondary: "#EBE5F9",
-  success: "#00FF00",
-  danger: "#FF0000",
-  warning: "#FFA500",
-  info: "#EBE5F9",
-  default: "#F1E9C9",
+  primary: '#F1E9C9',
+  secondary: '#EBE5F9',
+  success: '#00FF00',
+  danger: '#FF0000',
+  warning: '#FFA500',
+  info: '#EBE5F9',
+  default: '#F1E9C9',
 };
 
 const BadgeTextColors = {
-  primary: "#C47F17",
-  secondary: "#4B2995",
-  success: "#00FF00",
-  danger: "#FF0000",
-  warning: "#FFA500",
-  info: "#8047F8",
-  default: "#C47F17",
+  primary: '#C47F17',
+  secondary: '#4B2995',
+  success: '#00FF00',
+  danger: '#FF0000',
+  warning: '#FFA500',
+  info: '#8047F8',
+  default: '#C47F17',
 };
 
-export function Badge({ icon = "", label = "", type, onClick }: BadgeProps) {
+export function Badge({ icon = '', label = '', type, onClick }: BadgeProps) {
   return (
     <BadgeContainer
       onClick={onClick}

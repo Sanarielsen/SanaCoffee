@@ -1,6 +1,6 @@
-import { productListMocked } from "@features/Home/utils/ProductListMocked";
-import { PanelProducts } from "@features/Home/styles/ProductsListContainer";
-import { ProductItem } from "@features/Home/components/ProductItem";
+import { productListMocked } from '@features/Home/utils/ProductListMocked';
+import { PanelProducts } from '@features/Home/styles/ProductsListContainer';
+import { ProductItem } from '@features/Home/components/ProductItem';
 
 export function HomeProductsList() {
   return (

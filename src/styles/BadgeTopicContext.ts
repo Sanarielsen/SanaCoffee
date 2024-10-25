@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const BadgeTopicContext = styled.span`
-
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: bold;
@@ -14,5 +13,3 @@ export const BadgeTopicContext = styled.span`
   padding: 4px;
   align-items: center;
 `;
-
-
