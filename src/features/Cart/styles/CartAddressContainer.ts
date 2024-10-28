@@ -9,7 +9,12 @@ export const CartAddressBody = styled.div`
 `;
 
 export const CartAddressHeader = styled.div`
+  display: flex;
   margin-bottom: 40px;
+`;
+
+export const CartAddressIcon = styled.div`
+  margin-right: 8px;
 `;
 
 export const CartAddressForm = styled.div``;
@@ -21,4 +26,20 @@ export const TitleCartReview = styled.p`
   font-style: bold;
   line-height: 130%;
   font-optical-sizing: auto;
+`;
+
+export const TitleAddressHeader = styled.h2`
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+`;
+
+export const DescriptionAddressHeader = styled.p`
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
 `;
