@@ -21,6 +21,7 @@ export function InputRange({ name, value, onChange }: InputRangeProps) {
   return (
     <InputRangeContainer>
       <InputRangeSubstractValue
+        type="button"
         onClick={() => {
           if (currentValue > 0) {
             setCurrentValue(currentValue - 1);
@@ -41,6 +42,7 @@ export function InputRange({ name, value, onChange }: InputRangeProps) {
         />
       </div>
       <InputRangeAddValue
+        type="button"
         onClick={() => {
           onChange(currentValue + 1);
           setCurrentValue(currentValue + 1);

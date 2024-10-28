@@ -1,32 +1,16 @@
 import styled from 'styled-components';
 
-export const CartPagePanel = styled.div`
+export const CartPagePanel = styled.form`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
   gap: 32px;
   padding: 16px;
 `;
 
-export const CartPageAddress = styled.div`
-  grid-column: span 2;
-  grid-row: 1 span 2;
-
-  height: 372px;
-
-  border-radius: 6px;
-`;
-
-export const CartPagePayment = styled.div`
-  grid-column: span 2;
-  grid-row: 3;
-
-  height: 372px;
-
-  border-radius: 6px;
+export const CartPageDetails = styled.div`
+  grid-column: 1 / span 2;
 `;
 
 export const CartPageProducts = styled.div`
   grid-column: 3;
-  grid-row: span 3;
 `;
