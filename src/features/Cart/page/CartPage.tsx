@@ -1,24 +1,44 @@
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import { CartReview } from '@features/Cart/components/CartReview';
-import { CartAddress } from '../components/CartAddress';
+import { CartAddress } from '@features/Cart/components/CartAddress';
 import {
-  CartPageAddress,
+  CartPageDetails,
   CartPagePanel,
-  CartPagePayment,
-  CartPageProducts,
-} from '../styles/CartPageContainer';
+  CartPageProducts
+} from '@features/Cart/styles/CartPageContainer';
+import { cartAddressSchema } from '@features/Cart/schemas/cartAddressSchema';
+import { CartPersonAddress } from '@features/Cart/types/CartAddress';
 
 export function CartPage() {
+  const contextForms = useForm({
+    resolver: yupResolver(cartAddressSchema),
+  });
+
+  const onSubmitDelivery: SubmitHandler<CartPersonAddress> = (data) => {
+    console.log('Pedido realizado com sucesso: ', data);
+
+    const addressValues = contextForms.getValues();
+    console.log('Endereco: ', addressValues);
+  };
+
   return (
-    <CartPagePanel>
-      <CartPageAddress>
-        <CartAddress />
-      </CartPageAddress>
-      <CartPagePayment>
-        <p>Payment Section</p>
-      </CartPagePayment>
-      <CartPageProducts>
-        <CartReview />
-      </CartPageProducts>
-    </CartPagePanel>
+    <FormProvider {...contextForms}>
+      <CartPagePanel
+        onSubmit={(e) => {
+          e.preventDefault();
+          contextForms.handleSubmit(onSubmitDelivery)(e);
+        }}
+      >
+        <CartPageDetails>
+          <CartAddress />
+          <p>Payment Section</p>
+        </CartPageDetails>
+        <CartPageProducts>
+          <CartReview />
+        </CartPageProducts>
+      </CartPagePanel>
+    </FormProvider>
   );
 }

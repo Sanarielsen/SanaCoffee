@@ -1,6 +1,5 @@
 import {
   CartAddressBody,
-  CartAddressForm,
   CartAddressHeader,
   CartAddressIcon,
   CartAddressPanel,
@@ -8,6 +7,7 @@ import {
   TitleAddressHeader,
   TitleCartReview,
 } from '../styles/CartAddressContainer';
+import { CartAddressForm } from './CartAddressForm';
 
 export function CartAddress() {
   return (
@@ -21,19 +21,11 @@ export function CartAddress() {
           <div>
             <TitleAddressHeader> Endereço de entrega </TitleAddressHeader>
             <DescriptionAddressHeader>
-              {' '}
-              Informe o endereço onde deseja receber seu pedido{' '}
+              Informe o endereço onde deseja receber seu pedido
             </DescriptionAddressHeader>
           </div>
         </CartAddressHeader>
-        <CartAddressForm>
-          <span> Field 1 </span>
-          <span> Field 2 </span>
-          <span> Field 3 </span>
-          <span> Field 4 </span>
-          <span> Field 5 </span>
-          <span> Field 6 </span>
-        </CartAddressForm>
+        <CartAddressForm />
       </CartAddressBody>
     </CartAddressPanel>
   );

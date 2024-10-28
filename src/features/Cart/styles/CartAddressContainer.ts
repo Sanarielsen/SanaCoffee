@@ -5,7 +5,12 @@ export const CartAddressPanel = styled.div`
 `;
 
 export const CartAddressBody = styled.div`
+  margin-top: 15px;
   padding: 40px;
+
+  border-radius: 8px;
+
+  background: #f9f9f9;
 `;
 
 export const CartAddressHeader = styled.div`
@@ -16,8 +21,6 @@ export const CartAddressHeader = styled.div`
 export const CartAddressIcon = styled.div`
   margin-right: 8px;
 `;
-
-export const CartAddressForm = styled.div``;
 
 export const TitleCartReview = styled.p`
   font-family: 'Baloo 2', sans-serif;
