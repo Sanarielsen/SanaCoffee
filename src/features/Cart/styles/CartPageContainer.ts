@@ -10,27 +10,23 @@ export const CartPagePanel = styled.div`
 
 export const CartPageAddress = styled.div`
   grid-column: span 2;
-  grid-row: 1;
+  grid-row: 1 span 2;
 
   height: 372px;
 
   border-radius: 6px;
-
-  background-color: #f3f2f2;
 `;
 
 export const CartPagePayment = styled.div`
   grid-column: span 2;
-  grid-row: 2;
+  grid-row: 3;
 
   height: 372px;
 
   border-radius: 6px;
-
-  background-color: #f3f2f2;
 `;
 
 export const CartPageProducts = styled.div`
   grid-column: 3;
-  grid-row: span 2;
+  grid-row: span 3;
 `;

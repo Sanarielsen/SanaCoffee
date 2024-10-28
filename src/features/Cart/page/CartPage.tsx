@@ -1,11 +1,16 @@
 import { CartReview } from '@features/Cart/components/CartReview';
 import { CartAddress } from '../components/CartAddress';
-import { CartPageAddress, CartPagePanel, CartPagePayment, CartPageProducts } from '../styles/CartPageContainer';
+import {
+  CartPageAddress,
+  CartPagePanel,
+  CartPagePayment,
+  CartPageProducts,
+} from '../styles/CartPageContainer';
 
 export function CartPage() {
   return (
     <CartPagePanel>
-      <CartPageAddress>        
+      <CartPageAddress>
         <CartAddress />
       </CartPageAddress>
       <CartPagePayment>
