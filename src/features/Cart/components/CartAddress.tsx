@@ -6,7 +6,7 @@ import {
   DescriptionAddressHeader,
   TitleAddressHeader,
   TitleCartReview,
-} from '../styles/CartAddressContainer';
+} from '@features/Cart/styles/CartAddressContainer';
 import { CartAddressForm } from './CartAddressForm';
 
 export function CartAddress() {
