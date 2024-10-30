@@ -1,32 +1,34 @@
 import {
-  CartAddressBody,
-  CartAddressHeader,
-  CartAddressIcon,
   CartAddressPanel,
-  DescriptionAddressHeader,
-  TitleAddressHeader,
   TitleCartReview,
 } from '@features/Cart/styles/CartAddressContainer';
 import { CartAddressForm } from './CartAddressForm';
+import {
+  CartBody,
+  CartPanelHeader,
+  CartPanelIcon,
+  DescriptionPanelHeader,
+  TitlePanelHeader,
+} from '@features/Cart/styles/CartPanelContainer';
 
 export function CartAddress() {
   return (
     <CartAddressPanel>
       <TitleCartReview>Complete seu pedido</TitleCartReview>
-      <CartAddressBody>
-        <CartAddressHeader>
-          <CartAddressIcon>
+      <CartBody>
+        <CartPanelHeader>
+          <CartPanelIcon>
             <img src="/AddressIconOrange.svg" />
-          </CartAddressIcon>
+          </CartPanelIcon>
           <div>
-            <TitleAddressHeader> Endereço de entrega </TitleAddressHeader>
-            <DescriptionAddressHeader>
+            <TitlePanelHeader> Endereço de entrega </TitlePanelHeader>
+            <DescriptionPanelHeader>
               Informe o endereço onde deseja receber seu pedido
-            </DescriptionAddressHeader>
+            </DescriptionPanelHeader>
           </div>
-        </CartAddressHeader>
+        </CartPanelHeader>
         <CartAddressForm />
-      </CartAddressBody>
+      </CartBody>
     </CartAddressPanel>
   );
 }

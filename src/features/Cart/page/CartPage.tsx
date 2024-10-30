@@ -6,10 +6,11 @@ import { CartAddress } from '@features/Cart/components/CartAddress';
 import {
   CartPageDetails,
   CartPagePanel,
-  CartPageProducts
+  CartPageProducts,
 } from '@features/Cart/styles/CartPageContainer';
 import { cartAddressSchema } from '@features/Cart/schemas/cartAddressSchema';
 import { CartPersonAddress } from '@features/Cart/types/CartAddress';
+import { CartPayment } from '../components/CartPayment';
 
 export function CartPage() {
   const contextForms = useForm({
@@ -33,7 +34,7 @@ export function CartPage() {
       >
         <CartPageDetails>
           <CartAddress />
-          <p>Payment Section</p>
+          <CartPayment />
         </CartPageDetails>
         <CartPageProducts>
           <CartReview />
