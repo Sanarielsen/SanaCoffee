@@ -1,10 +1,11 @@
 import { useFormContext } from 'react-hook-form';
+
 import {
   CartAddressFieldGroup,
   CartAddressFieldRow,
   CartAddressFormContainer,
   InputText,
-} from '../styles/CartAddressFormContainer';
+} from '@features/Cart/styles/CartAddressFormContainer';
 import { InputTextError } from '@globalComponents/InputTextError';
 import { InputLabelOpcional } from '@globalComponents/InputLabelOpcional';
 

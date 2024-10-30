@@ -1,9 +1,10 @@
+import { useState } from 'react';
+
 import {
   InputRangeAddValue,
   InputRangeContainer,
   InputRangeSubstractValue,
 } from '@globalStyles/InputRangeContainer';
-import { useState } from 'react';
 
 interface InputRangeProps {
   name: string;
