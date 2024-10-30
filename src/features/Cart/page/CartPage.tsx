@@ -1,26 +1,35 @@
+import { useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { CartReview } from '@features/Cart/components/CartReview';
 import { CartAddress } from '@features/Cart/components/CartAddress';
+import { CartItem } from '@features/Cart/types/CartItem';
 import {
   CartPageDetails,
   CartPagePanel,
-  CartPageProducts
+  CartPageProducts,
 } from '@features/Cart/styles/CartPageContainer';
-import { cartAddressSchema } from '@features/Cart/schemas/cartAddressSchema';
+import { CartPayment } from '@features/Cart/components/CartPayment';
 import { CartPersonAddress } from '@features/Cart/types/CartAddress';
+import { CartReview } from '@features/Cart/components/CartReview';
+import { cartSchema } from '@features/Cart/schemas/cartSchema';
 
 export function CartPage() {
   const contextForms = useForm({
-    resolver: yupResolver(cartAddressSchema),
+    resolver: yupResolver(cartSchema),
   });
+
+  const [cartItens, setCartItens] = useState<CartItem[]>();
 
   const onSubmitDelivery: SubmitHandler<CartPersonAddress> = (data) => {
     console.log('Pedido realizado com sucesso: ', data);
 
     const addressValues = contextForms.getValues();
+
+    //We have a query to send the data to the backend
     console.log('Endereco: ', addressValues);
+    console.log('Cart: ', cartItens);
+
   };
 
   return (
@@ -33,10 +42,12 @@ export function CartPage() {
       >
         <CartPageDetails>
           <CartAddress />
-          <p>Payment Section</p>
+          <CartPayment />
         </CartPageDetails>
         <CartPageProducts>
-          <CartReview />
+          <CartReview onUpdateCart={(cartItens) => {
+            setCartItens(cartItens);
+          }} />
         </CartPageProducts>
       </CartPagePanel>
     </FormProvider>

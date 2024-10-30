@@ -10,17 +10,22 @@ import {
 } from '@features/Cart/styles/CartReviewContainer';
 import { ButtonContainer } from '@globalStyles/ButtonContainer';
 
-export function CartReview() {
+interface CartReviewProps {
+
+  onUpdateCart: (cartItens: CartItem[]) => void;
+}
+
+export function CartReview({ onUpdateCart }: CartReviewProps) {
   const [cartItens, setCartItens] = useState<CartItem[]>(cartItensMocked);
 
   const totalCart = cartItens.reduce((acc, item) => acc + item.quantity, 0);
-  console.log('Total do carrinho: ', totalCart);
 
   const handleChangeQuantity = (id: number, newQuantity: number) => {
     setCartItens((prevCartItens) => {
       const updatedCart = prevCartItens.map((item) =>
         item.id === id ? { ...item, quantity: newQuantity } : item,
       );
+      onUpdateCart(updatedCart);
       return updatedCart;
     });
   };
@@ -28,6 +33,7 @@ export function CartReview() {
   const handleDeleteItem = (id: number) => {
     setCartItens((prevCartItens) => {
       const updatedCart = prevCartItens.filter((item) => item.id !== id);
+      onUpdateCart(updatedCart);
       return updatedCart;
     });
   };
