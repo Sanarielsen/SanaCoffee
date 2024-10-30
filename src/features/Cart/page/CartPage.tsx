@@ -8,13 +8,13 @@ import {
   CartPagePanel,
   CartPageProducts,
 } from '@features/Cart/styles/CartPageContainer';
-import { cartAddressSchema } from '@features/Cart/schemas/cartAddressSchema';
+import { cartSchema } from '@features/Cart/schemas/cartSchema';
 import { CartPersonAddress } from '@features/Cart/types/CartAddress';
 import { CartPayment } from '../components/CartPayment';
 
 export function CartPage() {
   const contextForms = useForm({
-    resolver: yupResolver(cartAddressSchema),
+    resolver: yupResolver(cartSchema),
   });
 
   const onSubmitDelivery: SubmitHandler<CartPersonAddress> = (data) => {

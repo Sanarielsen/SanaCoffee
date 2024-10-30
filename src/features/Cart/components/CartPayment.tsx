@@ -5,6 +5,7 @@ import {
   DescriptionPanelHeader,
   TitlePanelHeader,
 } from '@features/Cart/styles/CartPanelContainer';
+import { CartPaymentMethod } from './CartPaymentMethod';
 
 export function CartPayment() {
   return (
@@ -20,6 +21,7 @@ export function CartPayment() {
           </DescriptionPanelHeader>
         </div>
       </CartPanelHeader>
+      <CartPaymentMethod />
     </CartBody>
   );
 }
