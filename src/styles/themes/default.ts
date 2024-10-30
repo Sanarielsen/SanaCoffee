@@ -3,6 +3,7 @@ export const defaultTheme = {
   'primary-hover': '#C47F17',
   'primary-disabled': '#E6E5E5',
   secondary: '#8047F8',
+  'secondary-light': '#EBE5F9',
   'secondary-hover': '#4B2995',
   'secondary-outlined': '#E6E5E5',
   'secondary-outlined-hover': '#D7D5D5',
