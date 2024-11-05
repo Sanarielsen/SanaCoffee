@@ -9,8 +9,7 @@ export function HeaderCart() {
         <NavLink to="/carrinho" title="Carrinho">
           <Badge
             icon="./HeaderCart.svg"
-            type={ColorType.DEFAULT}
-            onClick={() => console.log('Cart selecionado')}
+            type={ColorType.DEFAULT}            
           />
         </NavLink>
       </div>
