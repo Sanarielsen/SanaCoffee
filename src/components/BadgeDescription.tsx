@@ -1,4 +1,5 @@
-import { BadgeCircleBody } from '@globalStyles/BadgeCircleBody';
+import { ReactNode } from 'react';
+import { BadgeCircleBody, BadgeText } from '@globalStyles/BadgeCircleBody';
 import { BadgeContainerCircle } from '@globalStyles/BadgeIconCircle';
 import { BadgeContext } from '@globalStyles/BadgeContext';
 import { ColorVariant } from '@globalTypes/ColorVariant';
@@ -6,7 +7,8 @@ import { ColorVariant } from '@globalTypes/ColorVariant';
 interface BadgeDescriptionProps {
   icon: string;
   color: ColorVariant;
-  label: string;
+  label: ReactNode;
+  description: ReactNode;
 }
 
 const BadgeColors = {
@@ -20,6 +22,7 @@ export function BadgeDescription({
   icon,
   color,
   label,
+  description
 }: BadgeDescriptionProps) {
   return (
     <>
@@ -34,7 +37,10 @@ export function BadgeDescription({
             <img src={icon} />
           </BadgeContext>
         </BadgeContainerCircle>
-        <span>{label}</span>
+        <BadgeText>
+          <span>{label}</span>
+          <span>{description}</span>
+        </BadgeText>
       </BadgeCircleBody>
     </>
   );
