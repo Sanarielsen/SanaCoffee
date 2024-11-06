@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -15,6 +16,7 @@ import { CartReview } from '@features/Cart/components/CartReview';
 import { cartSchema } from '@features/Cart/schemas/cartSchema';
 
 export function CartPage() {
+  const navigate = useNavigate();
   const contextForms = useForm({
     resolver: yupResolver(cartSchema),
   });
@@ -27,9 +29,10 @@ export function CartPage() {
     const addressValues = contextForms.getValues();
 
     //We have a query to send the data to the backend
-    console.log('Endereco: ', addressValues);
-    console.log('Cart: ', cartItens);
+    //console.log('Endereco: ', addressValues);
+    //console.log('Cart: ', cartItens);
 
+    navigate('/finalizado');
   };
 
   return (
