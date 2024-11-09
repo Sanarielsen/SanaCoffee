@@ -9,8 +9,7 @@ export const MainContainer = styled.div`
 
 export const OrderSection = styled.div`
   grid-column: 1;
-  padding: 8px 0 40px 40px;
-  background-color: #000;
+  padding: 8px 0 40px 40px;  
   color: #FFF;
   border-radius: 6px 36px;
 `;

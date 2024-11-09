@@ -15,3 +15,8 @@ export const BadgeCircleBody = styled.div`
     justify-content: left;
   }
 `;
+
+export const BadgeText = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
