@@ -1,13 +1,12 @@
-import { DescriptionHeader, MainContainer, TitleHeader } from "@features/Review/styles/FinishedOrderPageContainer";
-import { OrderInformations } from "../components/OrderInformations";
+import { MainContainer } from "@features/Review/styles/FinishedOrderPageContainer";
+import { OrderHeader } from "@features/Review/components/OrderHeader";
+import { OrderInformations } from "@features/Review/components/OrderInformations";
 
 export function FinishedOrderPage() {
 
   return (
     <MainContainer>
-      <TitleHeader>Uhu! Pedido confirmado</TitleHeader>
-      <DescriptionHeader>Agora é só aguardar que logo o café chegará até você</DescriptionHeader>
-
+      <OrderHeader />
       <OrderInformations />
     </MainContainer>
   );
