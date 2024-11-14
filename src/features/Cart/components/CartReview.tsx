@@ -11,7 +11,6 @@ import {
 import { ButtonContainer } from '@globalStyles/ButtonContainer';
 
 interface CartReviewProps {
-
   onUpdateCart: (cartItens: CartItem[]) => void;
 }
 

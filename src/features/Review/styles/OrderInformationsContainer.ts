@@ -10,7 +10,7 @@ export const MainContainer = styled.div`
 export const OrderSection = styled.div`
   grid-column: 1;
   padding: 8px 0 40px 40px;
-  color: #FFF;
+  color: #fff;
   border-radius: 6px 36px;
   border: 1px solid ${({ theme }) => theme.primary}; /* Change the border color here */
 `;
@@ -22,4 +22,3 @@ export const TopicOrder = styled.div`
 export const DeliveryImageSection = styled.div`
   grid-column: 2;
 `;
-
