@@ -48,9 +48,11 @@ export function CartPage() {
           <CartPayment />
         </CartPageDetails>
         <CartPageProducts>
-          <CartReview onUpdateCart={(cartItens) => {
-            setCartItens(cartItens);
-          }} />
+          <CartReview
+            onUpdateCart={(cartItens) => {
+              setCartItens(cartItens);
+            }}
+          />
         </CartPageProducts>
       </CartPagePanel>
     </FormProvider>
