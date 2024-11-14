@@ -1,6 +1,11 @@
-import { BadgeDescription } from "@globalComponents/BadgeDescription";
-import { DeliveryImageSection, MainContainer, OrderSection, TopicOrder } from "../styles/OrderInformationsContainer";
-import { ColorVariant } from "@globalTypes/ColorVariant";
+import { BadgeDescription } from '@globalComponents/BadgeDescription';
+import {
+  DeliveryImageSection,
+  MainContainer,
+  OrderSection,
+  TopicOrder,
+} from '../styles/OrderInformationsContainer';
+import { ColorVariant } from '@globalTypes/ColorVariant';
 
 export function OrderInformations() {
   return (
@@ -22,7 +27,7 @@ export function OrderInformations() {
           <BadgeDescription
             icon="/IconClock.svg"
             color={ColorVariant.YELLOW}
-            label={"Previsão de entrega"}
+            label={'Previsão de entrega'}
             description={
               <>
                 <strong>20min - 30min</strong>
@@ -38,7 +43,7 @@ export function OrderInformations() {
             description={
               <>
                 <strong> Cartão de Crédito </strong>
-              </>              
+              </>
             }
           />
         </TopicOrder>

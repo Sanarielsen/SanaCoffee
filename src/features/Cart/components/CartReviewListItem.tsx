@@ -7,7 +7,7 @@ import {
   TextLink,
   TextLinkContainer,
 } from '@features/Cart/styles/CartReviewListItemContainer';
-import { CartReviewItem } from './CarReviewItem';
+import { CartReviewItem } from './CartReviewItem';
 
 interface CartReviewListItemProps {
   items: CartItem[];

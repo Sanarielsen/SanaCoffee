@@ -22,7 +22,7 @@ export function BadgeDescription({
   icon,
   color,
   label,
-  description
+  description,
 }: BadgeDescriptionProps) {
   return (
     <>

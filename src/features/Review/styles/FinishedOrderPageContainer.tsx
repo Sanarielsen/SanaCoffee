@@ -10,7 +10,7 @@ export const TitleHeader = styled.h2`
   font-weight: 800;
   font-size: 32px;
   line-height: 130%;
-  color: #C47F17;
+  color: #c47f17;
 `;
 
 export const DescriptionHeader = styled.p`
@@ -21,6 +21,3 @@ export const DescriptionHeader = styled.p`
   line-height: 130%;
   color: #403937;
 `;
-
-
-

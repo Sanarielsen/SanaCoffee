@@ -7,10 +7,7 @@ export function HeaderCart() {
     <>
       <div>
         <NavLink to="/carrinho" title="Carrinho">
-          <Badge
-            icon="./HeaderCart.svg"
-            type={ColorType.DEFAULT}            
-          />
+          <Badge icon="./HeaderCart.svg" type={ColorType.DEFAULT} />
         </NavLink>
       </div>
     </>

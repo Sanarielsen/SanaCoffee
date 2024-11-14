@@ -34,6 +34,7 @@ export function Badge({ icon = '', label = '', type, onClick }: BadgeProps) {
     <BadgeContainer
       onClick={onClick}
       style={{
+        height: '38px',
         backgroundColor: BadgeColors[type],
         color: BadgeTextColors[type],
       }}

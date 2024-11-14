@@ -13,6 +13,9 @@ export const cartSchema = object().shape({
   city: string().required('A cidade é obrigatória'),
   state: string().required('O estado é obrigatório'),
   paymentMethod: mixed<PaymentMethod>()
-    .oneOf(Object.values(PaymentMethod), 'O método de pagamento informado é inválido')
+    .oneOf(
+      Object.values(PaymentMethod),
+      'O método de pagamento informado é inválido',
+    )
     .required('O método de pagamento é obrigatório'),
 });
