@@ -2,7 +2,7 @@ import {
   ProductImageOption,
   ProductNameOption,
 } from '@globalTypes/ProductOption';
-import { ProductTypeOption } from '../types/ProductType';
+import { ProductTypeOption } from '@features/Home/types/ProductType';
 
 export const productListMocked = [
   {
