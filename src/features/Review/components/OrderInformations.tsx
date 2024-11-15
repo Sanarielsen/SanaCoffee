@@ -4,7 +4,7 @@ import {
   MainContainer,
   OrderSection,
   TopicOrder,
-} from '../styles/OrderInformationsContainer';
+} from '@features/Review/styles/OrderInformationsContainer';
 import { ColorVariant } from '@globalTypes/ColorVariant';
 
 export function OrderInformations() {
