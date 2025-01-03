@@ -10,13 +10,14 @@ import { BadgeTopic } from '@globalComponents/BadgeTopic';
 import { ColorType } from '@globalTypes/ColorType';
 import { Product } from '@features/Home/types/Product';
 import { ProductItemFooter } from './ProductItemFooter';
-import { addProductOnCart } from 'src/contexts/cartProductsContext';
+import { useCartProducts } from 'src/contexts/CartProductsContext';
 
 interface ProductItemProps {
   product: Product;
 }
 
 export function ProductItem({ product }: ProductItemProps) {
+  const { addProductOnCart } = useCartProducts();
 
   return (        
     <PanelProduct>
