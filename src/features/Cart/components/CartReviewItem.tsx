@@ -26,24 +26,24 @@ export function CartReviewItem({
   onChangeQuantity,
   onDeleteItem,
 }: CartReviewItemProps) {
-  const [itemQuantity, setItemQuantity] = useState(item.quantity);
+  const [itemQuantity, setItemQuantity] = useState(item.quantity);  
 
   return (
     <CartReviewItemContainer>
       <ItemSection>
         <ItemImage>
           <img
-            src={`/ProductItem${item.image}.png`}
-            alt={`Produto ${item.id} do carrinho com o nome de ${item.name}`}
+            src={`/ProductItem${item.product.image}.png`}
+            alt={`Produto ${item.product.id} do carrinho com o nome de ${item.product.name}`}
           />
         </ItemImage>
         <ItemDescrition>
           <div>
-            <ItemTitle>{item.name}</ItemTitle>
+            <ItemTitle>{item.product.name}</ItemTitle>
           </div>
           <ItemActions>
             <InputRange
-              name={item.name}
+              name={item.product.name}
               value={itemQuantity}
               onChange={(quantity) => {
                 setItemQuantity(quantity);
@@ -62,7 +62,7 @@ export function CartReviewItem({
           </ItemActions>
         </ItemDescrition>
       </ItemSection>
-      <ItemValue>R$ {(item.quantity * item.value).toFixed(2)}</ItemValue>
+      <ItemValue>R$ {(item.quantity * item.product.value).toFixed(2)}</ItemValue>
     </CartReviewItemContainer>
   );
 }

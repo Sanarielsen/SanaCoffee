@@ -8,14 +8,14 @@ import {
 } from '@features/Cart/styles/CartReviewDetailsContainer';
 
 interface CartReviewDetailsProps {
-  items: CartItem[];
+  items: CartItem[] | null;
 }
 
 export function CartReviewDetails({ items }: CartReviewDetailsProps) {
   const theme = useTheme();
 
-  const totalValue = items.reduce((acc, item) => {
-    return acc + item.value * item.quantity;
+  const totalValue = items && items.reduce((acc, item) => {
+    return acc + item.product.value * item.quantity;
   }, 0);
 
   const deliveryCost = 3.52;
@@ -24,7 +24,7 @@ export function CartReviewDetails({ items }: CartReviewDetailsProps) {
     <CartReviewDetailsContainer>
       <ValueSection color={theme['text-base']}>
         <span>Total de itens</span>
-        <span>R$ {totalValue.toFixed(2)}</span>
+        <span>R$ {totalValue && totalValue.toFixed(2)}</span>
       </ValueSection>
       <ValueSection color={theme['text-base']}>
         <span>Entrega</span>
@@ -33,7 +33,7 @@ export function CartReviewDetails({ items }: CartReviewDetailsProps) {
       </ValueSection>
       <TotalSection color={theme['text-subtitle']}>
         <span>Total</span>
-        <span>R$ {(totalValue + deliveryCost).toFixed(2)}</span>
+        <span>R$ {totalValue && (totalValue + deliveryCost).toFixed(2)}</span>
       </TotalSection>
     </CartReviewDetailsContainer>
   );
