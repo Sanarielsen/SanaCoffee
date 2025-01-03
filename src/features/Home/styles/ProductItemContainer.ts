@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PanelProducts = styled.div`
+export const PanelProduct = styled.div`
   margin: 16px 0;
   margin-bottom: 32px;
 

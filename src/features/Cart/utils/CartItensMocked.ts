@@ -3,7 +3,7 @@ import {
   ProductNameOption,
 } from '@globalTypes/ProductOption';
 
-import { CartItem } from '@features/Cart/types/CartItem';
+import { CartItem } from '@globalTypes/CartItem';
 
 export const cartItensMocked: CartItem[] = [
   {
