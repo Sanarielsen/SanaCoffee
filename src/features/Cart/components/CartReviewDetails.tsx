@@ -1,6 +1,6 @@
 import { useTheme } from 'styled-components';
 
-import { CartItem } from '@features/Cart/types/CartItem';
+import { CartItem } from '@globalTypes/CartItem';
 import {
   CartReviewDetailsContainer,
   TotalSection,

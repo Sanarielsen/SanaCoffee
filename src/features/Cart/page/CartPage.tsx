@@ -4,7 +4,7 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { CartAddress } from '@features/Cart/components/CartAddress';
-import { CartItem } from '@features/Cart/types/CartItem';
+import { CartItem } from '@globalTypes/CartItem';
 import {
   CartPageDetails,
   CartPagePanel,

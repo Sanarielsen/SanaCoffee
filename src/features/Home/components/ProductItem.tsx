@@ -1,5 +1,5 @@
 import {
-  PanelProducts,
+  PanelProduct,
   SectionDescription,
   SectionImage,
   SectionItem,
@@ -10,14 +10,16 @@ import { BadgeTopic } from '@globalComponents/BadgeTopic';
 import { ColorType } from '@globalTypes/ColorType';
 import { Product } from '@features/Home/types/Product';
 import { ProductItemFooter } from './ProductItemFooter';
+import { addProductOnCart } from 'src/contexts/cartProductsContext';
 
 interface ProductItemProps {
   product: Product;
 }
 
 export function ProductItem({ product }: ProductItemProps) {
-  return (
-    <PanelProducts>
+
+  return (        
+    <PanelProduct>
       <SectionImage>
         <img src={'/ProductItem' + product.image + '.png'} />
       </SectionImage>
@@ -31,11 +33,13 @@ export function ProductItem({ product }: ProductItemProps) {
         <SectionDescription>{product.description}</SectionDescription>
       </SectionItem>
       <SectionItem>
-        <ProductItemFooter
+        <ProductItemFooter            
           nameRange={'productQuantity' + product.id}
-          value={product.value}
+          value={product.value}          
+          onRefreshQuantityProduct={(quantity) => addProductOnCart({ ...product, quantity })}
         />
       </SectionItem>
-    </PanelProducts>
+    </PanelProduct>
+    
   );
 }

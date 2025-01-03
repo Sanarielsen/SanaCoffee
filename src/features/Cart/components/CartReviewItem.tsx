@@ -4,7 +4,7 @@ import { ButtonIcon } from '@globalComponents/ButtonIcon';
 import { ColorType } from '@globalTypes/ColorType';
 import { InputRange } from '@globalComponents/InputRange';
 
-import { CartItem } from '@features/Cart/types/CartItem';
+import { CartItem } from '@globalTypes/CartItem';
 import {
   CartReviewItemContainer,
   ItemActions,

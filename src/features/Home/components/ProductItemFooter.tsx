@@ -11,20 +11,22 @@ import { ColorType } from '@globalTypes/ColorType';
 interface ProductItemFooterProps {
   nameRange: string;
   value: number;
+  onRefreshQuantityProduct: (quantity: number) => void;
 }
 
 export function ProductItemFooter({
   nameRange,
   value,
+  onRefreshQuantityProduct
 }: ProductItemFooterProps) {
   const [quantityProduct, setQuantityProduct] = useState(0);
 
   const handleClickAddCurrentItemOnCart = () => {
-    //Add logic to add item on cart
+        
+    onRefreshQuantityProduct(quantityProduct);
     setQuantityProduct(() => 0);
   };
-
-  //Component capable receive value of product with ever 3 numbers in total.
+  
   return (
     <PanelContainer>
       <div>
@@ -42,6 +44,7 @@ export function ProductItemFooter({
       </div>
       <div>
         <ButtonIcon
+          type='button'
           color={ColorType.SECONDARY}
           pathImage="/IconCart.svg"
           onClick={handleClickAddCurrentItemOnCart}
