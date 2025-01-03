@@ -8,7 +8,7 @@ export function verifyIfWeHaveAnyCartCreated() {
 }
 
 // Mẽtodo para retornar um carrinho já existente.
-export function returnCartAlreadyCreated() {
+export function returnCartAlreadyCreated(): Cart {
   const cartString = localStorage.getItem('SanaCoffee.CartProducts');
   if (cartString) {
     try {
@@ -23,7 +23,7 @@ export function returnCartAlreadyCreated() {
 }
 
 // Método para verificar se existe algum carrinho com esse nome, se não existir ele cria um novo carrinho.
-export function initializeCart(): void {  
+export function initializeCart() {  
   if (!verifyIfWeHaveAnyCartCreated()) {
     const initialCart: Cart = { id: 1, items: [] };
     localStorage.setItem('SanaCoffee.CartProducts', JSON.stringify(initialCart));
