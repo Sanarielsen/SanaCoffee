@@ -1,6 +1,6 @@
 import { Divider } from '@globalStyles/Divider';
 
-import { CartItem } from '@features/Cart/types/CartItem';
+import { CartItem } from '@globalTypes/CartItem';
 import {
   CartReviewEmptyContainer,
   TextDescription,

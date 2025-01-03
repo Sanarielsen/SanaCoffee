@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { CartReviewDetails } from './CartReviewDetails';
 import { CartReviewListItem } from './CartReviewListItem';
-import { CartItem } from '@features/Cart/types/CartItem';
+import { CartItem } from '@globalTypes/CartItem';
 import { cartItensMocked } from '@features/Cart/utils/CartItensMocked';
 import {
   CartReviewPanel,
