@@ -10,7 +10,7 @@ import {
 import { CartReviewItem } from './CartReviewItem';
 
 interface CartReviewListItemProps {
-  items: CartItem[];
+  items: CartItem[] | null;
   onChangeItem: (id: number, newQuantity: number) => void;
   onDeleteItem: (id: number) => void;
 }
@@ -20,7 +20,7 @@ export function CartReviewListItem({
   onChangeItem,
   onDeleteItem,
 }: CartReviewListItemProps) {
-  if (items.length === 0) {
+  if (!items || items.length === 0) {
     return (
       <>
         <CartReviewEmptyContainer>
@@ -42,7 +42,7 @@ export function CartReviewListItem({
       <>
         <div key={item.id}>
           <CartReviewItem
-            key={item.id}
+            key={item.product.id}
             item={item}
             onChangeQuantity={onChangeItem}
             onDeleteItem={onDeleteItem}

@@ -11,12 +11,14 @@ import { ColorType } from '@globalTypes/ColorType';
 import { Product } from '@features/Home/types/Product';
 import { ProductItemFooter } from './ProductItemFooter';
 import { addProductOnCart } from 'src/contexts/cartProductsContext';
+import { useCartProducts } from 'src/contexts/CartProductsContext';
 
 interface ProductItemProps {
   product: Product;
 }
 
 export function ProductItem({ product }: ProductItemProps) {
+  const { addProductOnCart, getGreaterIdOnCart } = useCartProducts();
 
   return (        
     <PanelProduct>
@@ -36,7 +38,7 @@ export function ProductItem({ product }: ProductItemProps) {
         <ProductItemFooter            
           nameRange={'productQuantity' + product.id}
           value={product.value}          
-          onRefreshQuantityProduct={(quantity) => addProductOnCart({ ...product, quantity })}
+          onRefreshQuantityProduct={(quantity) => addProductOnCart( { id: (getGreaterIdOnCart() + 1), quantity, product } )}
         />
       </SectionItem>
     </PanelProduct>
