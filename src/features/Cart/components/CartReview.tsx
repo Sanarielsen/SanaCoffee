@@ -3,19 +3,21 @@ import { useState } from 'react';
 import { CartReviewDetails } from './CartReviewDetails';
 import { CartReviewListItem } from './CartReviewListItem';
 import { CartItem } from '@globalTypes/CartItem';
-import { cartItensMocked } from '@features/Cart/utils/CartItensMocked';
 import {
   CartReviewPanel,
   TitleCartReview,
 } from '@features/Cart/styles/CartReviewContainer';
 import { ButtonContainer } from '@globalStyles/ButtonContainer';
+import { useCartProducts } from 'src/contexts/CartProductsContext';
 
 interface CartReviewProps {
   onUpdateCart: (cartItens: CartItem[]) => void;
 }
 
 export function CartReview({ onUpdateCart }: CartReviewProps) {
-  const [cartItens, setCartItens] = useState<CartItem[]>(cartItensMocked);
+  
+  const { getCartItems } = useCartProducts();
+  const [cartItens, setCartItens] = useState<CartItem[]>(getCartItems);
 
   const totalCart = cartItens.reduce((acc, item) => acc + item.quantity, 0);
 

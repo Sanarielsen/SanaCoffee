@@ -6,6 +6,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 interface CartProductsContextType {
   cart: Cart | null;
   addProductOnCart: (product: CartItem) => void;
+  getCartItems: () => CartItem[];
 }
 
 interface CartProductsContextProviderProps {
@@ -66,6 +67,15 @@ export function CartProductsProvider({ children }: CartProductsContextProviderPr
       const cartString = JSON.stringify(existingCart);
       localStorage.setItem('SanaCoffee.CartProducts', cartString);
     }
+  }  
+
+  // Método para retornar um carrinho já criado
+  // Fix: E se eu tiver mais de um carrinho por cliente? Como eu prossigo?
+  const getCartItems = () => {
+    if (verifyIfWeHaveAnyCartCreated() && cart) {
+      return cart.items;
+    }
+    return [];
   }
 
   return (
@@ -73,6 +83,7 @@ export function CartProductsProvider({ children }: CartProductsContextProviderPr
       value={{
         cart,
         addProductOnCart,
+        getCartItems,
       }}
     >
       {children}
