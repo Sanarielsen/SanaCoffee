@@ -1,8 +1,5 @@
-import { useState } from 'react';
-
 import { CartReviewDetails } from './CartReviewDetails';
 import { CartReviewListItem } from './CartReviewListItem';
-import { CartItem } from '@globalTypes/CartItem';
 import {
   CartReviewPanel,
   TitleCartReview,
@@ -10,34 +7,12 @@ import {
 import { ButtonContainer } from '@globalStyles/ButtonContainer';
 import { useCartProducts } from 'src/contexts/CartProductsContext';
 
-interface CartReviewProps {
-  onUpdateCart: (cartItens: CartItem[]) => void;
-}
-
-export function CartReview({ onUpdateCart }: CartReviewProps) {
+export function CartReview() {
   
-  const { getCartItems } = useCartProducts();
-  const [cartItens, setCartItens] = useState<CartItem[]>(getCartItems);
-
-  const totalCart = cartItens.reduce((acc, item) => acc + item.quantity, 0);
-
-  const handleChangeQuantity = (id: number, newQuantity: number) => {
-    setCartItens((prevCartItens) => {
-      const updatedCart = prevCartItens.map((item) =>
-        item.id === id ? { ...item, quantity: newQuantity } : item,
-      );
-      onUpdateCart(updatedCart);
-      return updatedCart;
-    });
-  };
-
-  const handleDeleteItem = (id: number) => {
-    setCartItens((prevCartItens) => {
-      const updatedCart = prevCartItens.filter((item) => item.id !== id);
-      onUpdateCart(updatedCart);
-      return updatedCart;
-    });
-  };
+  const { getCartItems, putQuantityOfProductOnCart, deleteProductOnCart } = useCartProducts();
+  
+  const cartItens = getCartItems();
+  const totalCart = cartItens && cartItens.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>
@@ -46,11 +21,11 @@ export function CartReview({ onUpdateCart }: CartReviewProps) {
       <CartReviewPanel>
         <CartReviewListItem
           items={cartItens}
-          onChangeItem={handleChangeQuantity}
-          onDeleteItem={handleDeleteItem}
+          onChangeItem={putQuantityOfProductOnCart}
+          onDeleteItem={deleteProductOnCart}
         />
         <CartReviewDetails items={cartItens} />
-        <ButtonContainer type="submit" disabled={totalCart <= 0}>
+        <ButtonContainer type="submit" disabled={!totalCart || totalCart <= 0}>
           CONFIRMAR PEDIDO
         </ButtonContainer>
       </CartReviewPanel>

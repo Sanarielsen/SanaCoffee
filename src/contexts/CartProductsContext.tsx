@@ -1,47 +1,48 @@
-import { Cart } from "@globalTypes/Cart";
-import { CartItem } from "@globalTypes/CartItem";
 import { createContext, ReactNode, useContext, useState } from "react";
 
-//Interface com os métodos que serão utilizados no contexto.
+import { Cart } from "@globalTypes/Cart";
+import { CartItem } from "@globalTypes/CartItem";
+
 interface CartProductsContextType {
   cart: Cart | null;
+  getCartItems: () => CartItem[] | null;
+  getGreaterIdOnCart: () => number;
   addProductOnCart: (product: CartItem) => void;
-  getCartItems: () => CartItem[];
+  putQuantityOfProductOnCart: (idProduct: number, newQiantity: number) => void;
+  deleteProductOnCart: (idCartProduct: number) => void;
 }
 
 interface CartProductsContextProviderProps {
   children: ReactNode;
 }
 
-//Exporta
 export const CartProductsContext = createContext({} as CartProductsContextType)
 
-
 export function CartProductsProvider({ children }: CartProductsContextProviderProps) {
-  const [cart, setCart] = useState<Cart | null>(initializeCartState());
-
-  //Retorna um carrinho já existente ou cria um novo carrinho.
-  function initializeCartState(): Cart {
-    // Inicializa um carrinho se ele não existir
+  const [cart, setCart] = useState<Cart | null>(initializeCartState());  
+  
+  function initializeCartState(): Cart {    
     initializeCart();    
     return returnCartAlreadyCreated();
   }  
-
-  // Verifica se existe algum carrinho criado;
+  
   function verifyIfWeHaveAnyCartCreated() {
     const cart = localStorage.getItem('SanaCoffee.CartProducts');
     return cart !== null;
   }
 
-  // Inicializa um novo carrinho para a aplicação
+  function updateLocalStorage(cart: Cart) {
+    const cartString = JSON.stringify(cart);
+    localStorage.setItem('SanaCoffee.CartProducts', cartString);
+  }
+  
   function initializeCart() {  
     if (!verifyIfWeHaveAnyCartCreated()) {
-      const initialCart: Cart = { id: 1, items: [] };
-      localStorage.setItem('SanaCoffee.CartProducts', JSON.stringify(initialCart));
+      const initialCart: Cart = { id: Math.floor(Math.random() * 100), status: "pendente", createdAt: new Date(), updatedAt: new Date(), items: [] };
+      updateLocalStorage(initialCart);
     }
   }
-
-  // Método para retornar um carrinho já existente.
+  
   function returnCartAlreadyCreated(): Cart {
     const cartString = localStorage.getItem('SanaCoffee.CartProducts');
     if (cartString) {
@@ -55,19 +56,58 @@ export function CartProductsProvider({ children }: CartProductsContextProviderPr
     }
     return null;
   }
-
-  // Método para adicionar um produto no carrinho
-  const addProductOnCart = ( product: CartItem ) => {    
-    initializeCart();
   
-    const existingCart = returnCartAlreadyCreated();
-    if (existingCart) {
-      existingCart.items.push(product);
-      setCart(existingCart);
-      const cartString = JSON.stringify(existingCart);
-      localStorage.setItem('SanaCoffee.CartProducts', cartString);
+  const addProductOnCart = ( product: CartItem ) => {    
+    if (!cart || !cart.items ) {
+      return;
     }
-  }  
+
+    setCart((prevCart) => {
+      if (!prevCart || !prevCart.items) {
+        return prevCart;
+      }
+      const updatedCart: Cart = { ...prevCart, items: [...prevCart.items, product] }; 
+      updateLocalStorage(updatedCart);
+      return updatedCart;
+    });            
+  }
+
+  const putQuantityOfProductOnCart = ( idProduct: number, newQuantity: number ) => {
+    if (!cart || !cart.items ) {
+      return;
+    }
+
+    setCart((prevCart) => {
+      if (!prevCart || !prevCart.items) {
+        return null;
+      }
+
+      const updatedCartItems = prevCart.items.map((item) => {
+        if (item.id === idProduct) {
+          return { ...item, quantity: newQuantity };
+        }
+        return item;
+      });
+  
+      const updatedCart: Cart = { ...prevCart, items: updatedCartItems };
+      updateLocalStorage(updatedCart);
+      return updatedCart;
+    });      
+  }
+
+  const deleteProductOnCart = (idCartProduct: number) => {
+    if (!cart || !cart.items) {
+      return;
+    }
+  
+    const newCartItems = cart.items.filter((item) => item.id !== idCartProduct);
+
+    setCart((prevCart) => {
+      const updatedCart: Cart = { ...prevCart, items: newCartItems } as Cart;
+      updateLocalStorage(updatedCart);
+      return updatedCart;
+    });    
+  };
 
   // Método para retornar um carrinho já criado
   // Fix: E se eu tiver mais de um carrinho por cliente? Como eu prossigo?
@@ -78,12 +118,25 @@ export function CartProductsProvider({ children }: CartProductsContextProviderPr
     return [];
   }
 
+  const getGreaterIdOnCart = () => {
+    if (!cart || !cart.items ) {
+      return 0;
+    }
+    if (cart.items.length === 0) {
+      return 0;
+    }
+    return Math.max(...cart?.items.map(item => item.id));
+  }
+
   return (
     <CartProductsContext.Provider 
       value={{
         cart,
-        addProductOnCart,
         getCartItems,
+        getGreaterIdOnCart,
+        addProductOnCart,
+        putQuantityOfProductOnCart,
+        deleteProductOnCart
       }}
     >
       {children}
