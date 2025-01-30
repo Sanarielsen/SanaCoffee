@@ -5,20 +5,20 @@ import { createContext, ReactNode, useContext, useState } from "react";
 //Interface com os métodos que serão utilizados no contexto.
 interface CartProductsContextType {
   cart: Cart | null;
-  addProductOnCart: (product: CartItem) => void;
   getCartItems: () => CartItem[];
+  getLastIdOnCart: () => number;
+  addProductOnCart: (product: CartItem) => void;
+  deleteProductOnCart: (idCartProduct: number) => void;
 }
 
 interface CartProductsContextProviderProps {
   children: ReactNode;
 }
 
-//Exporta
 export const CartProductsContext = createContext({} as CartProductsContextType)
 
-
 export function CartProductsProvider({ children }: CartProductsContextProviderProps) {
-  const [cart, setCart] = useState<Cart | null>(initializeCartState());
+  const [cart, setCart] = useState<Cart | null>(initializeCartState());  
 
   //Retorna um carrinho já existente ou cria um novo carrinho.
   function initializeCartState(): Cart {
@@ -36,7 +36,7 @@ export function CartProductsProvider({ children }: CartProductsContextProviderPr
   // Inicializa um novo carrinho para a aplicação
   function initializeCart() {  
     if (!verifyIfWeHaveAnyCartCreated()) {
-      const initialCart: Cart = { id: 1, items: [] };
+      const initialCart: Cart = { id: Math.floor(Math.random() * 100), status: "pendente", createdAt: new Date(), updatedAt: new Date(), items: [] };
       localStorage.setItem('SanaCoffee.CartProducts', JSON.stringify(initialCart));
     }
   }
@@ -67,6 +67,18 @@ export function CartProductsProvider({ children }: CartProductsContextProviderPr
       const cartString = JSON.stringify(existingCart);
       localStorage.setItem('SanaCoffee.CartProducts', cartString);
     }
+  }
+
+  const deleteProductOnCart = ( idCartProduct: number ) => {    
+    initializeCart();
+  
+    const existingCart = returnCartAlreadyCreated();
+    if (existingCart) {      
+      existingCart.items = existingCart.items.filter((item) => item.id !== idCartProduct);
+      setCart(existingCart);
+      const cartString = JSON.stringify(existingCart);
+      localStorage.setItem('SanaCoffee.CartProducts', cartString);
+    }
   }  
 
   // Método para retornar um carrinho já criado
@@ -78,12 +90,24 @@ export function CartProductsProvider({ children }: CartProductsContextProviderPr
     return [];
   }
 
+  const getLastIdOnCart = () => {
+    if (!cart) {
+      return 0;
+    }
+    if (cart.items.length === 0) {
+      return 0;
+    }
+    return Math.max(...cart?.items.map(item => item.id));
+  }
+
   return (
     <CartProductsContext.Provider 
       value={{
         cart,
-        addProductOnCart,
         getCartItems,
+        getLastIdOnCart,
+        addProductOnCart,
+        deleteProductOnCart
       }}
     >
       {children}

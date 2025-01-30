@@ -1,12 +1,7 @@
-import {
-  ProductImageOption,
-  ProductNameOption,
-} from '@globalTypes/ProductOption';
+import { Product } from '@features/Home/types/Product';
 
 export type CartItem = {
   id: number;
-  image: ProductImageOption;
-  name: ProductNameOption;
   quantity: number;
-  value: number;
+  product: Product;
 };

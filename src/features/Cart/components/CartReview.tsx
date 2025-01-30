@@ -16,7 +16,7 @@ interface CartReviewProps {
 
 export function CartReview({ onUpdateCart }: CartReviewProps) {
   
-  const { getCartItems } = useCartProducts();
+  const { getCartItems, deleteProductOnCart } = useCartProducts();
   const [cartItens, setCartItens] = useState<CartItem[]>(getCartItems);
 
   const totalCart = cartItens.reduce((acc, item) => acc + item.quantity, 0);
@@ -34,9 +34,10 @@ export function CartReview({ onUpdateCart }: CartReviewProps) {
   const handleDeleteItem = (id: number) => {
     setCartItens((prevCartItens) => {
       const updatedCart = prevCartItens.filter((item) => item.id !== id);
-      onUpdateCart(updatedCart);
+      onUpdateCart(updatedCart);      
       return updatedCart;
     });
+    deleteProductOnCart(id);
   };
 
   return (

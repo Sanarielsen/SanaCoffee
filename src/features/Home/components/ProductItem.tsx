@@ -17,7 +17,7 @@ interface ProductItemProps {
 }
 
 export function ProductItem({ product }: ProductItemProps) {
-  const { addProductOnCart } = useCartProducts();
+  const { addProductOnCart, getLastIdOnCart } = useCartProducts();
 
   return (        
     <PanelProduct>
@@ -37,7 +37,7 @@ export function ProductItem({ product }: ProductItemProps) {
         <ProductItemFooter            
           nameRange={'productQuantity' + product.id}
           value={product.value}          
-          onRefreshQuantityProduct={(quantity) => addProductOnCart({ ...product, quantity })}
+          onRefreshQuantityProduct={(quantity) => addProductOnCart( { id: (getLastIdOnCart() + 1), quantity, product } )}
         />
       </SectionItem>
     </PanelProduct>

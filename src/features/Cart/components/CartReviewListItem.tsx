@@ -42,7 +42,7 @@ export function CartReviewListItem({
       <>
         <div key={item.id}>
           <CartReviewItem
-            key={item.id}
+            key={item.product.id}
             item={item}
             onChangeQuantity={onChangeItem}
             onDeleteItem={onDeleteItem}
