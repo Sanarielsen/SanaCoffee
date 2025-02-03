@@ -22,6 +22,9 @@ export function ProductItemFooter({
   const [quantityProduct, setQuantityProduct] = useState(0);
 
   const handleClickAddCurrentItemOnCart = () => {
+
+    const audio = new Audio('./AudioSuccess.oga');
+    audio.play();
         
     onRefreshQuantityProduct(quantityProduct);
     setQuantityProduct(() => 0);

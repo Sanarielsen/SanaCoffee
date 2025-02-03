@@ -6,6 +6,8 @@ import {
 } from '@features/Cart/styles/CartReviewContainer';
 import { ButtonContainer } from '@globalStyles/ButtonContainer';
 import { useCartProducts } from 'src/contexts/CartProductsContext';
+import { useToastService } from 'src/contexts/ToastContext';
+import { TypeComponent } from '@globalTypes/TypeComponent';
 
 export function CartReview() {
   
