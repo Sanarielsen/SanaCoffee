@@ -4,17 +4,20 @@ import { GlobalStyle } from './styles/GlobalStyle';
 import { Router } from './Router';
 import { ThemeProvider } from 'styled-components';
 import { CartProductsProvider } from './contexts/CartProductsContext';
+import { ToastProvider } from './contexts/ToastContext';
 
 function App() {
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
-        <CartProductsProvider>        
-          <BrowserRouter>
-            <Router />
-          </BrowserRouter>
-          <GlobalStyle />
-        </CartProductsProvider>
+        <ToastProvider>
+          <CartProductsProvider>        
+            <BrowserRouter>
+              <Router />
+            </BrowserRouter>
+            <GlobalStyle />
+          </CartProductsProvider>
+        </ToastProvider>
       </ThemeProvider>
     </>
   );
