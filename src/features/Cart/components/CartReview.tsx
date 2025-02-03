@@ -56,7 +56,7 @@ export function CartReview({ onUpdateCart }: CartReviewProps) {
           onDeleteItem={handleDeleteItem}
         />
         <CartReviewDetails items={cartItens} />
-        <ButtonContainer type="submit" disabled={totalCart <= 0}>
+        <ButtonContainer color={TypeComponent.PRIMARY} type="submit" disabled={totalCart <= 0}>
           CONFIRMAR PEDIDO
         </ButtonContainer>
       </CartReviewPanel>
