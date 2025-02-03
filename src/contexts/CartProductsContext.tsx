@@ -18,7 +18,7 @@ interface CartProductsContextProviderProps {
 export const CartProductsContext = createContext({} as CartProductsContextType)
 
 export function CartProductsProvider({ children }: CartProductsContextProviderProps) {
-  const [cart, setCart] = useState<Cart | null>(initializeCartState());  
+  const [cart, setCart] = useState<Cart | null>(initializeCartState());
 
   //Retorna um carrinho já existente ou cria um novo carrinho.
   function initializeCartState(): Cart {

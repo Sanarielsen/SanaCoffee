@@ -11,6 +11,8 @@ import { ColorType } from '@globalTypes/ColorType';
 import { Product } from '@features/Home/types/Product';
 import { ProductItemFooter } from './ProductItemFooter';
 import { useCartProducts } from 'src/contexts/CartProductsContext';
+import { useToastService } from 'src/contexts/ToastContext';
+import { TypeComponent } from '@globalTypes/TypeComponent';
 
 interface ProductItemProps {
   product: Product;
@@ -18,6 +20,12 @@ interface ProductItemProps {
 
 export function ProductItem({ product }: ProductItemProps) {
   const { addProductOnCart, getLastIdOnCart } = useCartProducts();
+  const { addToastMessage } = useToastService();  
+
+  const handleAddProductOnCart = (name: string, quantity: number) => {
+    addProductOnCart( { id: (getLastIdOnCart() + 1), quantity, product } )
+    addToastMessage(TypeComponent.SUCCESS, `${name} adicionado no carrinho.`);
+  } 
 
   return (        
     <PanelProduct>
@@ -37,7 +45,7 @@ export function ProductItem({ product }: ProductItemProps) {
         <ProductItemFooter            
           nameRange={'productQuantity' + product.id}
           value={product.value}          
-          onRefreshQuantityProduct={(quantity) => addProductOnCart( { id: (getLastIdOnCart() + 1), quantity, product } )}
+          onRefreshQuantityProduct={(quantity) => handleAddProductOnCart(product.name, quantity)}
         />
       </SectionItem>
     </PanelProduct>
