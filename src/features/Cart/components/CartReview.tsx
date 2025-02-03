@@ -9,6 +9,8 @@ import {
 } from '@features/Cart/styles/CartReviewContainer';
 import { ButtonContainer } from '@globalStyles/ButtonContainer';
 import { useCartProducts } from 'src/contexts/CartProductsContext';
+import { useToastService } from 'src/contexts/ToastContext';
+import { TypeComponent } from '@globalTypes/TypeComponent';
 
 interface CartReviewProps {
   onUpdateCart: (cartItens: CartItem[]) => void;
@@ -17,6 +19,8 @@ interface CartReviewProps {
 export function CartReview({ onUpdateCart }: CartReviewProps) {
   
   const { getCartItems, deleteProductOnCart } = useCartProducts();
+  const { addToastMessage } = useToastService();
+
   const [cartItens, setCartItens] = useState<CartItem[]>(getCartItems);
 
   const totalCart = cartItens.reduce((acc, item) => acc + item.quantity, 0);
@@ -38,6 +42,7 @@ export function CartReview({ onUpdateCart }: CartReviewProps) {
       return updatedCart;
     });
     deleteProductOnCart(id);
+    addToastMessage(TypeComponent.INFO, `${cartItens.find( (item) => item.id === id)?.product.name} removido do carrinho.`);
   };
 
   return (

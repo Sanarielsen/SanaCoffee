@@ -20,7 +20,7 @@ interface ProductItemProps {
 
 export function ProductItem({ product }: ProductItemProps) {
   const { addProductOnCart, getLastIdOnCart } = useCartProducts();
-  const { addToastMessage } = useToastService();  
+  const { addToastMessage } = useToastService();
 
   const handleAddProductOnCart = (name: string, quantity: number) => {
     addProductOnCart( { id: (getLastIdOnCart() + 1), quantity, product } )
