@@ -6,7 +6,6 @@ import {
 } from '@features/Cart/styles/CartReviewContainer';
 import { ButtonContainer } from '@globalStyles/ButtonContainer';
 import { useCartProducts } from 'src/contexts/CartProductsContext';
-import { useToastService } from 'src/contexts/ToastContext';
 import { TypeComponent } from '@globalTypes/TypeComponent';
 
 export function CartReview() {
@@ -27,7 +26,7 @@ export function CartReview() {
           onDeleteItem={deleteProductOnCart}
         />
         <CartReviewDetails items={cartItens} />
-        <ButtonContainer type="submit" disabled={!totalCart || totalCart <= 0}>
+        <ButtonContainer color={TypeComponent.PRIMARY} type="submit" disabled={!totalCart || totalCart <= 0}>
           CONFIRMAR PEDIDO
         </ButtonContainer>
       </CartReviewPanel>

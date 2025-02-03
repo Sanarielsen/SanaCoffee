@@ -8,6 +8,19 @@ export const defaultTheme = {
   'secondary-outlined': '#E6E5E5',
   'secondary-outlined-hover': '#D7D5D5',
 
+  'success': '#28a745',
+  'success-hover': '#1B7830',
+  'success-disabled': '#113519',
+  'error': '#dc3545',
+  'error-hover': '#A32D39',
+  'error-disabled': '#5B2429',
+  'warning': '#ffc107',
+  'warning-hover': '#977B28',
+  'warning-disabled': '#786732',
+  'info': '#17a2b8',
+  'info-hover': '#277D8A',
+  'info-disabled': '#214247',
+
   white: '#FFFFFF',
   black: '#574F4D',
 
