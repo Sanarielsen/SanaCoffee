@@ -8,6 +8,11 @@ export const defaultTheme = {
   'secondary-outlined': '#E6E5E5',
   'secondary-outlined-hover': '#D7D5D5',
 
+  'primary-color-success': '#2F754C',
+  'primary-color-success-hover': '#2B6A4D',
+  'primary-color-danger': '#AB222E',
+  'primary-color-danger-hover': '#901C26',
+
   white: '#FFFFFF',
   black: '#574F4D',
 
