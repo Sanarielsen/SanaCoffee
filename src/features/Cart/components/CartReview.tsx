@@ -1,16 +1,14 @@
+import { ButtonContainer } from '@globalStyles/ButtonContainer';
 import { CartReviewDetails } from './CartReviewDetails';
 import { CartReviewListItem } from './CartReviewListItem';
 import {
   CartReviewPanel,
   TitleCartReview,
 } from '@features/Cart/styles/CartReviewContainer';
-import { ButtonContainer } from '@globalStyles/ButtonContainer';
 import { useCartProducts } from 'src/contexts/CartProductsContext';
-import { useToastService } from 'src/contexts/ToastContext';
-import { TypeComponent } from '@globalTypes/TypeComponent';
 
 export function CartReview() {
-  
+
   const { getCartItems, putQuantityOfProductOnCart, deleteProductOnCart } = useCartProducts();
   
   const cartItens = getCartItems();

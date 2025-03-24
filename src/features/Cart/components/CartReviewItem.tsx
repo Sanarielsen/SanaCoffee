@@ -14,6 +14,7 @@ import {
   ItemTitle,
   ItemValue,
 } from '@features/Cart/styles/CartReviewItemContainer';
+import { ModalConfirmation } from '@globalComponents/ModalConfirmation';
 
 interface CartReviewItemProps {
   item: CartItem;
@@ -27,6 +28,7 @@ export function CartReviewItem({
   onDeleteItem,
 }: CartReviewItemProps) {
   const [itemQuantity, setItemQuantity] = useState(item.quantity);  
+  const [ modalState, setModalState ] = useState(false);
 
   return (
     <CartReviewItemContainer>
@@ -56,13 +58,21 @@ export function CartReviewItem({
               color={ColorType.SECONDARY_OUTLINED}
               pathImage="/IconThrashPurple.svg"
               onClick={() => {
-                onDeleteItem(item.id);
+                setModalState(true);
               }}
             />
           </ItemActions>
         </ItemDescrition>
       </ItemSection>
       <ItemValue>R$ {(item.quantity * item.product.value).toFixed(2)}</ItemValue>
+
+      <ModalConfirmation 
+        open={modalState}
+        title="Excluir item do carrinho"
+        message="Deseja realmente excluir este item do carrinho?"
+        onClickConfirm={() => onDeleteItem(item.id)} 
+        onClickClose={() => setModalState(false)}
+      />
     </CartReviewItemContainer>
   );
 }
