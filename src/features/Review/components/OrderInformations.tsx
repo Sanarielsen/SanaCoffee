@@ -6,8 +6,16 @@ import {
   TopicOrder,
 } from '@features/Review/styles/OrderInformationsContainer';
 import { ColorVariant } from '@globalTypes/ColorVariant';
+import { CartPersonAddress } from '@globalTypes/CartAddress';
 
-export function OrderInformations() {
+interface OrderInformationsProps {
+  address: CartPersonAddress
+}
+
+export function OrderInformations( {address}: OrderInformationsProps ) {
+
+  const description = address.city + ', ' + address.state;
+
   return (
     <MainContainer>
       <OrderSection>
@@ -17,10 +25,10 @@ export function OrderInformations() {
             color={ColorVariant.PURPLE}
             label={
               <>
-                Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                Entrega em <strong>{address.street},{address.number}</strong>
               </>
             }
-            description="Farrapos - Porto Alegre, RS"
+            description={description}
           />
         </TopicOrder>
         <TopicOrder>
@@ -42,7 +50,7 @@ export function OrderInformations() {
             label="Pagamento na entrega"
             description={
               <>
-                <strong> Cartão de Crédito </strong>
+                <strong>{address.paymentMethod}</strong>
               </>
             }
           />

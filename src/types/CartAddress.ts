@@ -6,4 +6,5 @@ export type CartPersonAddress = {
   neighborhood: string;
   city: string;
   state: string;
+  paymentMethod: string;
 };
