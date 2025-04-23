@@ -9,11 +9,10 @@ import { ColorVariant } from '@globalTypes/ColorVariant';
 import { CartPersonAddress } from '@globalTypes/CartAddress';
 
 interface OrderInformationsProps {
-  address: CartPersonAddress
+  address: CartPersonAddress;
 }
 
-export function OrderInformations( {address}: OrderInformationsProps ) {
-
+export function OrderInformations({ address }: OrderInformationsProps) {
   const description = address.city + ', ' + address.state;
 
   return (
@@ -25,7 +24,10 @@ export function OrderInformations( {address}: OrderInformationsProps ) {
             color={ColorVariant.PURPLE}
             label={
               <>
-                Entrega em <strong>{address.street},{address.number}</strong>
+                Entrega em{' '}
+                <strong>
+                  {address.street},{address.number}
+                </strong>
               </>
             }
             description={description}

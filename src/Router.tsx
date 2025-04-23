@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+
 import { HomePage } from './features/Home/page/HomePage';
 import { DefaultLayout } from './layouts/DefaultLayout';
 import { CartPage } from '@features/Cart/page/CartPage';

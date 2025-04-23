@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-export const CartItensPanel = styled.div`    
+export const CartItensPanel = styled.div`
   position: relative;
 `;
 
-export const CartItensIcon = styled.div`  
-
+export const CartItensIcon = styled.div`
   width: 100%;
   height: 100%;
   position: none;
@@ -13,7 +12,7 @@ export const CartItensIcon = styled.div`
   left: 0;
 `;
 
-export const CartItensCount = styled.p`  
+export const CartItensCount = styled.p`
   position: absolute;
 
   display: flex;
@@ -25,7 +24,7 @@ export const CartItensCount = styled.p`
 
   top: -30%;
   left: 70%;
-  color: #FFF;
+  color: #fff;
   background-color: lightcoral;
   border-radius: 8px;
   z-index: 10;

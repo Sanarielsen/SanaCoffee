@@ -1,5 +1,6 @@
-import { LayoutContainer } from '@globalStyles/LayoutContainer';
 import { Outlet } from 'react-router-dom';
+
+import { LayoutContainer } from '@globalStyles/LayoutContainer';
 import HeaderPage from '@features/Header/pages/HeaderPage';
 
 export function DefaultLayout() {

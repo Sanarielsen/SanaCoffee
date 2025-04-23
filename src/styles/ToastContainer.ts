@@ -7,7 +7,7 @@ interface PanelProps {
 }
 
 interface ContainerProps {
-  type: ToastTypeColor;  
+  type: ToastTypeColor;
 }
 
 const typeColors = {
@@ -15,7 +15,7 @@ const typeColors = {
   error: '#dc3545',
   warning: '#ffc107',
   info: '#17a2b8',
-}
+};
 
 const fadeIn = keyframes`
   from {
@@ -42,33 +42,33 @@ const fadeOut = keyframes`
 export const Panel = styled.div<PanelProps>`
   position: fixed;
   bottom: 32px;
-  left: 0;  
-  
+  left: 0;
+
   width: 100%;
 
   z-index: ${(props: PanelProps) => 1000 - props.order};
-  
+
   display: flex;
   justify-content: center;
 `;
 
-export const Container = styled.div<ContainerProps>`  
-
+export const Container = styled.div<ContainerProps>`
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
 
   padding: 16px;
-  border-radius: 8px;  
+  border-radius: 8px;
 
   width: 620px;
   max-width: 800px;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: ${(props: ContainerProps) => typeColors[props.type]};
-  animation: ${fadeIn} 0.5s ease-in-out, ${fadeOut} 1.5s ease-in-out 3.5s;
+  animation:
+    ${fadeIn} 0.5s ease-in-out,
+    ${fadeOut} 1.5s ease-in-out 3.5s;
 `;
 
 export const Message = styled.div`
-
   display: flex;
   justify-content: center;
 
@@ -76,9 +76,6 @@ export const Message = styled.div`
 `;
 
 export const CloseButton = styled.div`
-
   display: flex;
-  align-items: center;  
+  align-items: center;
 `;
-
-
