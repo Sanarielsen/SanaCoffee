@@ -14,9 +14,11 @@ interface CartReviewDetailsProps {
 export function CartReviewDetails({ items }: CartReviewDetailsProps) {
   const theme = useTheme();
 
-  const totalValue = items && items.reduce((acc, item) => {
-    return acc + item.product.value * item.quantity;
-  }, 0);
+  const totalValue =
+    items &&
+    items.reduce((acc, item) => {
+      return acc + item.product.value * item.quantity;
+    }, 0);
 
   const deliveryCost = 3.52;
 

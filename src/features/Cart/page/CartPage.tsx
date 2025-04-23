@@ -14,6 +14,7 @@ import { CartPersonAddress } from '@globalTypes/CartAddress';
 import { CartReview } from '@features/Cart/components/CartReview';
 import { cartSchema } from '@features/Cart/schemas/cartSchema';
 import { ModalConfirmation } from '@globalComponents/ModalConfirmation';
+import { useCartProducts } from 'src/contexts/CartProductsContext';
 
 export function CartPage() {
   const navigate = useNavigate();
@@ -21,20 +22,21 @@ export function CartPage() {
     resolver: yupResolver(cartSchema),
   });
 
-  const [ modalState, setModalState ] = useState(false);  
-  //const { getCartItems } = useCartProducts();
+  const [modalState, setModalState] = useState(false);
+  const { deleteCartAfterBuyingWasFinished } = useCartProducts();
 
-  const onSubmitDelivery: SubmitHandler<CartPersonAddress> = () => {    
+  const onSubmitDelivery: SubmitHandler<CartPersonAddress> = () => {
     setModalState(true);
   };
 
   const handleSendSubmitOrder = () => {
-
     const addressValues = contextForms.getValues();
+    
+    deleteCartAfterBuyingWasFinished();
 
     // FEAT: We need a algoritm to calculate the delivery time of current order
     navigate('/finalizado', { state: addressValues });
-  }
+  };
 
   return (
     <FormProvider {...contextForms}>
@@ -53,11 +55,11 @@ export function CartPage() {
         </CartPageProducts>
       </CartPagePanel>
 
-      <ModalConfirmation 
+      <ModalConfirmation
         open={modalState}
         title="Confirmar o pedido atual"
         message="Deseja realmente confirmar o pedido atual?"
-        onClickConfirm={() => handleSendSubmitOrder()} 
+        onClickConfirm={() => handleSendSubmitOrder()}
         onClickClose={() => setModalState(false)}
       />
     </FormProvider>
