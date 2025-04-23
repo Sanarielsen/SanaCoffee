@@ -1,7 +1,7 @@
 export enum PaymentMethod {
-  CREDIT = 'credit',
-  DEBIT = 'debit',
-  CASH = 'cash',
-  NOTSELECTED = 'not_selected',
+  CREDIT = 'Credito',
+  DEBIT = 'Débito',
+  CASH = 'Dinheiro',
+  NOTSELECTED = 'NDA',
   NULL = '',
 }
