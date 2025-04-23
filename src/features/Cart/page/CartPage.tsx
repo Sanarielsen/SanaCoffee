@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -9,30 +10,31 @@ import {
   CartPageProducts,
 } from '@features/Cart/styles/CartPageContainer';
 import { CartPayment } from '@features/Cart/components/CartPayment';
-import { CartPersonAddress } from '@features/Cart/types/CartAddress';
+import { CartPersonAddress } from '@globalTypes/CartAddress';
 import { CartReview } from '@features/Cart/components/CartReview';
 import { cartSchema } from '@features/Cart/schemas/cartSchema';
-import { useCartProducts } from 'src/contexts/CartProductsContext';
+import { ModalConfirmation } from '@globalComponents/ModalConfirmation';
 
 export function CartPage() {
   const navigate = useNavigate();
   const contextForms = useForm({
     resolver: yupResolver(cartSchema),
   });
-  
-  const { getCartItems } = useCartProducts();
 
-  const onSubmitDelivery: SubmitHandler<CartPersonAddress> = (data) => {
-    console.log('Pedido realizado com sucesso: ', data);
+  const [ modalState, setModalState ] = useState(false);  
+  //const { getCartItems } = useCartProducts();
+
+  const onSubmitDelivery: SubmitHandler<CartPersonAddress> = () => {    
+    setModalState(true);
+  };
+
+  const handleSendSubmitOrder = () => {
 
     const addressValues = contextForms.getValues();
 
-    //We have a query to send the data to the backend
-    console.log('Endereco: ', addressValues);
-    console.log('Cart: ', getCartItems);
-
-    navigate('/finalizado');
-  };
+    // FEAT: We need a algoritm to calculate the delivery time of current order
+    navigate('/finalizado', { state: addressValues });
+  }
 
   return (
     <FormProvider {...contextForms}>
@@ -50,6 +52,14 @@ export function CartPage() {
           <CartReview />
         </CartPageProducts>
       </CartPagePanel>
+
+      <ModalConfirmation 
+        open={modalState}
+        title="Confirmar o pedido atual"
+        message="Deseja realmente confirmar o pedido atual?"
+        onClickConfirm={() => handleSendSubmitOrder()} 
+        onClickClose={() => setModalState(false)}
+      />
     </FormProvider>
   );
 }
