@@ -1,5 +1,10 @@
-import { CloseButton, Container, Message, Panel } from "@globalStyles/ToastContainer";
-import { TypeComponent } from "@globalTypes/TypeComponent";
+import {
+  CloseButton,
+  Container,
+  Message,
+  Panel,
+} from '@globalStyles/ToastContainer';
+import { TypeComponent } from '@globalTypes/TypeComponent';
 
 interface ToastProps {
   order: number;
@@ -9,17 +14,16 @@ interface ToastProps {
 }
 
 export function Toast({ order, type, message, onCloseToast }: ToastProps) {
-
   return (
     <Panel order={order}>
       <Container type={type}>
         <Message>
           <p>{message}</p>
-        </Message>      
+        </Message>
         <CloseButton>
           <img src="./CloseIcon.svg" onClick={onCloseToast} />
         </CloseButton>
       </Container>
     </Panel>
-  )
+  );
 }

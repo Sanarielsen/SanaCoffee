@@ -31,9 +31,10 @@ const BadgeTextColors = {
 export function BadgeTopic({ labels, type }: BadgeTopicProps) {
   return (
     <>
-      {labels.map((label) => {
+      {labels.map((label, index) => {
         return (
           <BadgeTopicContainer
+            key={index}
             style={{
               fontSize: '10px',
               lineHeight: '130%',

@@ -8,11 +8,12 @@ import {
 import { useCartProducts } from 'src/contexts/CartProductsContext';
 
 export function CartReview() {
+  const { getCartItems, putQuantityOfProductOnCart, deleteProductOnCart } =
+    useCartProducts();
 
-  const { getCartItems, putQuantityOfProductOnCart, deleteProductOnCart } = useCartProducts();
-  
   const cartItens = getCartItems();
-  const totalCart = cartItens && cartItens.reduce((acc, item) => acc + item.quantity, 0);
+  const totalCart =
+    cartItens && cartItens.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>

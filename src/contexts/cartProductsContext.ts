@@ -1,5 +1,5 @@
-import { Cart } from "@globalTypes/Cart";
-import { CartItem } from "@globalTypes/CartItem";
+import { Cart } from '@globalTypes/Cart';
+import { CartItem } from '@globalTypes/CartItem';
 
 // Método para verificar se existe algum carrinho com esse nome.
 export function verifyIfWeHaveAnyCartCreated() {
@@ -23,15 +23,18 @@ export function returnCartAlreadyCreated() {
 }
 
 // Método para verificar se existe algum carrinho com esse nome, se não existir ele cria um novo carrinho.
-export function initializeCart(): void {  
+export function initializeCart(): void {
   if (!verifyIfWeHaveAnyCartCreated()) {
     const initialCart: Cart = { id: 1, items: [] };
-    localStorage.setItem('SanaCoffee.CartProducts', JSON.stringify(initialCart));
+    localStorage.setItem(
+      'SanaCoffee.CartProducts',
+      JSON.stringify(initialCart),
+    );
   }
 }
 
 // Cria uma função que adiciona um produto ao carrinho
-export function addProductOnCart( product: CartItem ) {
+export function addProductOnCart(product: CartItem) {
   // Método para verificar se o carrinho já existe e criar se ele existe;
   initializeCart();
 
@@ -45,26 +48,20 @@ export function addProductOnCart( product: CartItem ) {
 
 // Cria uma função que remove um produto ao carrinho
 export function removeProductOnCart() {
-
-  console.log("cartProductsContext.removeProductOnCart()");
+  console.log('cartProductsContext.removeProductOnCart()');
 }
 
 // Cria uma função que atualiza a quantidade de um produto ao carrinho
 export function updateProductOnCart() {
-
-  console.log("cartProductsContext.updateProductOnCart()");
+  console.log('cartProductsContext.updateProductOnCart()');
 }
 
 // Cria uma função que consulta um produto de um carrinho existente.
 export function returnSpecificProductOnCart() {
-  
-  console.log("cartProductsContext.returnSpecificProductOnCart()");
+  console.log('cartProductsContext.returnSpecificProductOnCart()');
 }
 
 // Cria uma função que consulta os produtos de um carrinho existente.
 export function returnAllProductsOnCart() {
-  
-  console.log("cartProductsContext.returnAllProductsOnCart()");
+  console.log('cartProductsContext.returnAllProductsOnCart()');
 }
-
-

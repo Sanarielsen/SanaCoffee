@@ -17,19 +17,18 @@ interface ProductItemFooterProps {
 export function ProductItemFooter({
   nameRange,
   value,
-  onRefreshQuantityProduct
+  onRefreshQuantityProduct,
 }: ProductItemFooterProps) {
   const [quantityProduct, setQuantityProduct] = useState(0);
 
   const handleClickAddCurrentItemOnCart = () => {
-
     const audio = new Audio('./AudioSuccess.oga');
     audio.play();
-        
+
     onRefreshQuantityProduct(quantityProduct);
     setQuantityProduct(() => 0);
   };
-  
+
   return (
     <PanelContainer>
       <div>
@@ -47,7 +46,7 @@ export function ProductItemFooter({
       </div>
       <div>
         <ButtonIcon
-          type='button'
+          type="button"
           color={ColorType.SECONDARY}
           pathImage="/IconCart.svg"
           onClick={handleClickAddCurrentItemOnCart}

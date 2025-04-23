@@ -21,14 +21,14 @@ interface ProductItemProps {
 
 export function ProductItem({ product }: ProductItemProps) {
   const { addProductOnCart, getGreaterIdOnCart } = useCartProducts();
-  const { addToastMessage } = useToastService();  
+  const { addToastMessage } = useToastService();
 
   const handleAddProductOnCart = (name: string, quantity: number) => {
-    addProductOnCart( { id: (getGreaterIdOnCart() + 1), quantity, product } )
+    addProductOnCart({ id: getGreaterIdOnCart() + 1, quantity, product });
     addToastMessage(TypeComponent.SUCCESS, `${name} adicionado no carrinho.`);
-  } 
+  };
 
-  return (        
+  return (
     <PanelProduct>
       <SectionImage>
         <img src={'/ProductItem' + product.image + '.png'} />
@@ -43,13 +43,14 @@ export function ProductItem({ product }: ProductItemProps) {
         <SectionDescription>{product.description}</SectionDescription>
       </SectionItem>
       <SectionItem>
-        <ProductItemFooter            
+        <ProductItemFooter
           nameRange={'productQuantity' + product.id}
-          value={product.value}          
-          onRefreshQuantityProduct={(quantity) => handleAddProductOnCart(product.name, quantity)}
+          value={product.value}
+          onRefreshQuantityProduct={(quantity) =>
+            handleAddProductOnCart(product.name, quantity)
+          }
         />
       </SectionItem>
     </PanelProduct>
-    
   );
 }
