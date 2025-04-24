@@ -10,7 +10,6 @@ import { BadgeTopic } from '@globalComponents/BadgeTopic';
 import { ColorType } from '@globalTypes/ColorType';
 import { Product } from '@features/Home/types/Product';
 import { ProductItemFooter } from './ProductItemFooter';
-import { addProductOnCart } from 'src/contexts/cartProductsContext';
 import { useCartProducts } from 'src/contexts/CartProductsContext';
 import { useToastService } from 'src/contexts/ToastContext';
 import { TypeComponent } from '@globalTypes/TypeComponent';

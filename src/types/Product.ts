@@ -1,3 +1,4 @@
+import { ProductTypeOption } from '@features/Home/types/ProductType';
 import {
   ProductImageOption,
   ProductNameOption,
@@ -5,8 +6,10 @@ import {
 
 export type Product = {
   id: number;
+  types: ProductTypeOption[];
   image: ProductImageOption;
   name: ProductNameOption;
   quantity: number;
+  description: string;
   value: number;
 };

@@ -8,7 +8,7 @@ interface BadgeDescriptionProps {
   icon: string;
   color: ColorVariant;
   label: ReactNode;
-  description: ReactNode;
+  description?: ReactNode;
 }
 
 const BadgeColors = {

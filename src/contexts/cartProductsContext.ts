@@ -1,5 +1,5 @@
 import { Cart } from '@globalTypes/Cart';
-import { CartItem } from '@globalTypes/CartItem';
+//import { CartItem } from '@globalTypes/CartItem';
 
 // Método para verificar se existe algum carrinho com esse nome.
 export function verifyIfWeHaveAnyCartCreated() {
@@ -23,28 +23,28 @@ export function returnCartAlreadyCreated() {
 }
 
 // Método para verificar se existe algum carrinho com esse nome, se não existir ele cria um novo carrinho.
-export function initializeCart(): void {
-  if (!verifyIfWeHaveAnyCartCreated()) {
-    const initialCart: Cart = { id: 1, items: [] };
-    localStorage.setItem(
-      'SanaCoffee.CartProducts',
-      JSON.stringify(initialCart),
-    );
-  }
-}
+// export function initializeCart(): void {
+//   if (!verifyIfWeHaveAnyCartCreated()) {
+//     const initialCart: Cart = { id: 1, items: [] };
+//     localStorage.setItem(
+//       'SanaCoffee.CartProducts',
+//       JSON.stringify(initialCart),
+//     );
+//   }
+// }
 
 // Cria uma função que adiciona um produto ao carrinho
-export function addProductOnCart(product: CartItem) {
-  // Método para verificar se o carrinho já existe e criar se ele existe;
-  initializeCart();
+// export function addProductOnCart(product: CartItem) {
+//   // Método para verificar se o carrinho já existe e criar se ele existe;
+//   initializeCart();
 
-  const existingCart = returnCartAlreadyCreated();
-  if (existingCart) {
-    existingCart.items.push(product);
-    const cartString = JSON.stringify(existingCart);
-    localStorage.setItem('SanaCoffee.CartProducts', cartString);
-  }
-}
+//   const existingCart = returnCartAlreadyCreated();
+//   if (existingCart) {
+//     existingCart.items.push(product);
+//     const cartString = JSON.stringify(existingCart);
+//     localStorage.setItem('SanaCoffee.CartProducts', cartString);
+//   }
+// }
 
 // Cria uma função que remove um produto ao carrinho
 export function removeProductOnCart() {

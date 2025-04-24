@@ -11,7 +11,7 @@
     "format": "prettier --write",
     "formatAll": "prettier --write .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "homepage": "https://sanarielsen.github.io/SanaCoffee/",
   "dependencies": {

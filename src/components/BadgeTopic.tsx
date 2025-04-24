@@ -10,7 +10,9 @@ interface BadgeTopicProps {
 
 const BadgeColors = {
   primary: '#F1E9C9',
+  'primary-outlined': '#F1E9C9',
   secondary: '#EBE5F9',
+  'secondary-outlined': '#EBE5F9',
   success: '#00FF00',
   danger: '#FF0000',
   warning: '#FFA500',
@@ -20,7 +22,9 @@ const BadgeColors = {
 
 const BadgeTextColors = {
   primary: '#C47F17',
+  'primary-outlined': '#C47F17',  
   secondary: '#4B2995',
+  'secondary-outlined': '#4B2995',
   success: '#00FF00',
   danger: '#FF0000',
   warning: '#FFA500',
