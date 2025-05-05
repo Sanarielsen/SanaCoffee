@@ -29,8 +29,8 @@ export function ProductItem({ product }: ProductItemProps) {
 
   return (
     <PanelProduct>
-      <SectionImage>
-        <img src={'/ProductItem' + product.image + '.png'} />
+      <SectionImage>        
+        <img src={`${import.meta.env.BASE_URL}ProductItem${product.image}.png`} />
       </SectionImage>
       <SectionItemBadge>
         <BadgeTopic labels={product.types} type={ColorType.PRIMARY} />

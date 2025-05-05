@@ -38,13 +38,13 @@ export function ButtonIcon({
       {label ? (
         <>
           <IconSection>
-            <img src={pathImage} />
+            <img src={import.meta.env.BASE_URL + pathImage} />
           </IconSection>
           <IconTitle color={color}>{label}</IconTitle>
         </>
       ) : (
         <IconSectionWithoutTitle>
-          <img src={pathImage} />
+          <img src={import.meta.env.BASE_URL + pathImage} />
         </IconSectionWithoutTitle>
       )}
     </ButtonIconContainer>

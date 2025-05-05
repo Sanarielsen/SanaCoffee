@@ -1,7 +1,7 @@
 export function HomeBannerImage() {
   return (
-    <div>
-      <img src={'/HeaderProduct.png'} />
+    <div>      
+      <img src={`${import.meta.env.BASE_URL}./HeaderProduct.png`} />
     </div>
   );
 }

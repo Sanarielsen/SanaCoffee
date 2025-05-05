@@ -18,7 +18,7 @@ export function CartAddress() {
       <CartBody>
         <CartPanelHeader>
           <CartPanelIcon>
-            <img src="/AddressIconOrange.svg" />
+            <img src={`${import.meta.env.BASE_URL}./AddressIconOrange.svg`} />            
           </CartPanelIcon>
           <div>
             <TitlePanelHeader> Endereço de entrega </TitlePanelHeader>

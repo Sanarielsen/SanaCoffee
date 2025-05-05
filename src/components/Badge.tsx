@@ -45,7 +45,7 @@ export function Badge({ icon = '', label = '', type, onClick }: BadgeProps) {
     >
       {icon ? (
         <BadgeContext>
-          <img src={icon} />
+          <img src={import.meta.env.BASE_URL + icon} />
         </BadgeContext>
       ) : null}
       {label ? <BadgeContext>{label}</BadgeContext> : null}

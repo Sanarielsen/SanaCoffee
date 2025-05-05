@@ -12,7 +12,7 @@ export function CartPayment() {
     <CartBody>
       <CartPanelHeader>
         <CartPanelIcon>
-          <img src="/PaymentIconPurple.svg" />
+          <img src={`${import.meta.env.BASE_URL}/PaymentIconPurple.svg`}/>
         </CartPanelIcon>
         <div>
           <TitlePanelHeader> Pagamento </TitlePanelHeader>

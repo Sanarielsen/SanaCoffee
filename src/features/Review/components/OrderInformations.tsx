@@ -59,7 +59,7 @@ export function OrderInformations({ address }: OrderInformationsProps) {
         </TopicOrder>
       </OrderSection>
       <DeliveryImageSection>
-        <img src="/DeliverImage.png" />
+        <img src={`${import.meta.env.BASE_URL}/DeliverImage.png`} />
       </DeliveryImageSection>
     </MainContainer>
   );
