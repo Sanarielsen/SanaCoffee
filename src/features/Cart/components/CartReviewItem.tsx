@@ -35,7 +35,7 @@ export function CartReviewItem({
       <ItemSection>
         <ItemImage>
           <img
-            src={`/ProductItem${item.product.image}.png`}
+            src={`${import.meta.env.BASE_URL}/ProductItem${item.product.image}.png`}
             alt={`Produto ${item.product.id} do carrinho com o nome de ${item.product.name}`}
           />
         </ItemImage>

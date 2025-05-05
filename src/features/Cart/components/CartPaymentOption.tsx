@@ -51,7 +51,7 @@ export function CartPaymentOption({
       }
     >
       <PaymentOptionBody>
-        <img src={paymentIcon[type]} />
+        <img src={import.meta.env.BASE_URL + paymentIcon[type]} />
         <PaymentOptionLabel>{paymentLabel[type]}</PaymentOptionLabel>
       </PaymentOptionBody>
     </PaymentOption>

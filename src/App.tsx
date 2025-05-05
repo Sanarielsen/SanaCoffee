@@ -13,7 +13,7 @@ function App() {
       <ThemeProvider theme={defaultTheme}>
         <ToastProvider>
           <CartProductsProvider>
-            <BrowserRouter>
+            <BrowserRouter basename='/SanaCoffee/'>
               <Router />
             </BrowserRouter>
             <GlobalStyle />

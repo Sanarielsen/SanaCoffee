@@ -21,7 +21,7 @@ export function Toast({ order, type, message, onCloseToast }: ToastProps) {
           <p>{message}</p>
         </Message>
         <CloseButton>
-          <img src="./CloseIcon.svg" onClick={onCloseToast} />
+          <img src={`${import.meta.env.BASE_URL}./CloseIcon.svg`} onClick={onCloseToast} />          
         </CloseButton>
       </Container>
     </Panel>

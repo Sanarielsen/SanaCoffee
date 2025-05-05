@@ -34,7 +34,7 @@ export function BadgeDescription({
           }}
         >
           <BadgeContext>
-            <img src={icon} />
+            <img src={import.meta.env.BASE_URL + "/" + icon} />
           </BadgeContext>
         </BadgeContainerCircle>
         <BadgeText>
