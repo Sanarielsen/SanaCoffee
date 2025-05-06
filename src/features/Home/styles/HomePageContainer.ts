@@ -7,14 +7,14 @@ export const BannerContainer = styled.div`
   align-items: center;
 
   width: 100%;
-  height: 380px;
+  
 
   @media ${device.laptop} {
     height: 100%;
   }
 
   @media ${device.laptopL} {
-    height: 380px;
+    
     flex-direction: row;
   }
 `;
@@ -32,19 +32,25 @@ export const HomeContextFirst = styled.div`
 `;
 
 export const HomeContextSecond = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+
+  display: none;  
 
   @media ${device.laptop} {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     width: 100%;
     height: 100%;
   }
 
   @media ${device.laptopL} {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     width: 50%;
     height: 100%;
-  }
+  }  
 `;
 
 export const ProductsContainer = styled.div`

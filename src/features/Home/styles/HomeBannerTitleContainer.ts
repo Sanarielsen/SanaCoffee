@@ -13,19 +13,39 @@ export const DescriptionSection = styled.p`
 `;
 
 export const PanelAreaSubtitles = styled.div`
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 
-  margin: 24px 0;
-  fontsize: 16px;
+  grid-template-columns: 1fr;
+
+  @media ${device.tablet} {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    height: 64px;
+  }
 `;
 
 export const PanelContainer = styled.div`
-  margin: 40px 0;
+  margin: 16px 0;
+
+  @media ${device.tablet} {
+    margin: 32px 0;
+  }
 `;
 
 export const SubtitlesSection = styled.div`
-  width: 50%;
+  padding-bottom: 16px;
+  width: 100%;
+
+  @media ${device.tablet} {
+    padding-bottom: 0;
+    width: 50%;
+  }
 `;
 
 export const TitleSection = styled.h1`

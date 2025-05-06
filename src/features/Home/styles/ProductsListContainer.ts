@@ -11,6 +11,10 @@ export const PanelProducts = styled.div`
   gap: 16px;
 
   @media ${device.mobileS} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media ${device.tablet} {
     grid-template-columns: repeat(2, 1fr);
   }
 

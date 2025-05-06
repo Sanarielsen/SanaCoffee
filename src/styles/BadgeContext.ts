@@ -7,7 +7,9 @@ export const BadgeContext = styled.p`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+
+  font-size: clamp(12px, 1vw, 18px);
+  
   line-height: 130%;
   color: #4b2995;
 `;

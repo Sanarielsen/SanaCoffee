@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
+import { device } from '@globalStyles/Devices';
+
 export const CartReviewPanel = styled.div`
   margin-top: 15px;
   padding: 40px;
-  width: 448px;
+  width: auto;
   background-color: #f3f2f2;
   border-radius: 6px 44px 6px 44px;
+
+  @media ${device.laptopL} {    
+    width: 448px;
+  }
 `;
 
 export const TitleCartReview = styled.p`

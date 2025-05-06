@@ -1,3 +1,4 @@
+import { device } from '@globalStyles/Devices';
 import styled from 'styled-components';
 
 export const CartPagePanel = styled.form`
@@ -8,9 +9,17 @@ export const CartPagePanel = styled.form`
 `;
 
 export const CartPageDetails = styled.div`
-  grid-column: 1 / span 2;
+  grid-column: span 3;
+
+  @media ${device.laptopL} {
+    grid-column: 1 / span 2;
+  }
 `;
 
 export const CartPageProducts = styled.div`
-  grid-column: 3;
+  grid-column: span 3;
+
+  @media ${device.laptopL} {
+    grid-column: 3;
+  }
 `;
