@@ -1,10 +1,16 @@
+import { device } from '@globalStyles/Devices';
 import styled from 'styled-components';
 
-export const PaymentOption = styled.div`
-  display: flex;
-  width: 100%;
-  background-color: ${({ theme }) => theme['secondary-outlined']};
-  border-radius: 6px;
+export const PaymentOption = styled.div`  
+  margin: 16px;
+
+  @media ${device.tablet} {
+    display: flex;
+    width: 100%;
+    background-color: ${({ theme }) => theme['secondary-outlined']};
+    border-radius: 6px;
+    margin: 0px;
+  }
 `;
 
 export const PaymentOptionBody = styled.div`

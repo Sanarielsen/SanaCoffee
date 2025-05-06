@@ -1,10 +1,15 @@
+import { device } from '@globalStyles/Devices';
 import styled from 'styled-components';
 
 export const CartReviewItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  width: 368px;
+  width: auto;
+
+  @media ${device.laptopL} {
+      width: 368px;
+    }
 `;
 
 export const ItemSection = styled.div`
