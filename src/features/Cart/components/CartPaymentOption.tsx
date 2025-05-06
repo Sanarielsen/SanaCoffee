@@ -36,7 +36,7 @@ export function CartPaymentOption({
 }: CartPaymentOptionProps) {
   const theme = useTheme();
 
-  const selectedPaymentIcon = {
+  const selectedPaymentIcon = {    
     backgroundColor: theme['secondary-light'],
     border: '1px solid ' + theme['secondary'],
   };

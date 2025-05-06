@@ -3,13 +3,17 @@ import { useFormContext } from 'react-hook-form';
 import styled from 'styled-components';
 
 import { CartPaymentOption } from './CartPaymentOption';
+import { device } from '@globalStyles/Devices';
 import { InputTextError } from '@globalComponents/InputTextError';
 import { PaymentMethod } from '@features/Cart/types/PaymentMethod';
 
 const CartPaymentList = styled.div`
-  display: flex;
-  width: 100%;
-  gap: 16px;
+
+  @media ${device.tablet} {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+  }
 `;
 
 export function CartPaymentMethod() {

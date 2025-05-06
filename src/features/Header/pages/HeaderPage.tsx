@@ -1,24 +1,23 @@
 import { HeaderAddress } from '@features/Header/components/HeaderAddress';
 import { HeaderBrand } from '@features/Header/components/HeaderBrand';
 import { HeaderCart } from '@features/Header/components/HeaderCart';
-import { HeaderContainer } from '@features/Header/styles/HeaderContainer';
-import { HeaderGroup } from '@features/Header/styles/HeaderGroup';
+import { HeaderContainer, HeaderGroupBrand, HeaderGroupFeatures } from '@features/Header/styles/HeaderPageContainer';
 
 export default function HeaderPage() {
   return (
     <>
       <HeaderContainer>
-        <div>
+        <HeaderGroupBrand>
           <HeaderBrand />
-        </div>
-        <HeaderGroup>
+        </HeaderGroupBrand>
+        <HeaderGroupFeatures>
           <div>
             <HeaderAddress />
           </div>
           <div>
             <HeaderCart />
           </div>
-        </HeaderGroup>
+        </HeaderGroupFeatures>
       </HeaderContainer>
     </>
   );
